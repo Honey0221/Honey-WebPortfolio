@@ -13,9 +13,10 @@ import {
 } from "react-icons/si";
 import { FaDatabase, FaJava, FaCode } from "react-icons/fa";
 
-import HotelImg from "../img/Hotel.png";
-import BBookImg from "../img/BBook.png";
-import GameImg from "../img/Game.png";
+import HotelImg from "../img/MiniprojectMain.png";
+import BBookImg from "../img/TeamprojectMain.png";
+import GameImg from "../img/MyprojectMain.png";
+import PortfolioImg from "../img/WebportfolioMain.png";
 
 type Project = {
   name: string;

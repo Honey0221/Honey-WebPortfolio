@@ -3,7 +3,7 @@ import React from "react";
 const Introduction = () => {
   return (
     <div className="max-w-[900px] mx-auto px-4 text-gray-800">
-      <h2 className="text-4xl font-bold mb-12 text-center">INTRODUCTIONS</h2>
+      <h2 className="text-4xl font-bold mb-12 text-center">INTRODUCTION</h2>
 
       <div className="w-full text-base mb-5 bg-[#5555] p-5 rounded-2xl">
         <h5 className="text-2xl font-bold pb-6">개발자의 핵심 가치: 문제 해결 능력</h5>

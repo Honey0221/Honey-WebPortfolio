@@ -21,7 +21,7 @@ function App() {
         <Profile />
       </section>
       <section
-        id="introductions"
+        id="introduction"
         className="snap-start h-screen flex items-center justify-center bg-gray-200"
       >
         <Introduction />

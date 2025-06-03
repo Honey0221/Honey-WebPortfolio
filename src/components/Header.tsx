@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   const menuItems = [
     { name: "PROFILE", href: "#profile" },
-    { name: "INTRODUCTIONS", href: "#introductions" },
+    { name: "INTRODUCTIONS", href: "#introduction" },
     { name: "CAREER", href: "#career" },
     { name: "SKILLS", href: "#skills" },
     { name: "PROJECTS", href: "#projects" },
