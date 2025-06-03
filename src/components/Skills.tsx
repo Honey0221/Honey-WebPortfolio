@@ -24,29 +24,29 @@ type Skill = {
 };
 
 const frontendSkills: Skill[] = [
-  { name: "HTML5", icon: <SiHtml5 size={30} /> },
-  { name: "CSS (Tailwind)", icon: <SiTailwindcss size={30} /> },
-  { name: "JavaScript", icon: <SiJavascript size={30} /> }, 
-  { name: "TypeScript", icon: <SiTypescript size={30} /> },
-  { name: "jQuery", icon: <SiJquery size={30} /> },
-  { name: "React", icon: <SiReact size={30} /> },
-  { name: "Flutter", icon: <SiFlutter size={30} /> },
+  { name: "HTML5", icon: <SiHtml5 size={40} /> },
+  { name: "CSS (Tailwind)", icon: <SiTailwindcss size={40} /> },
+  { name: "JavaScript", icon: <SiJavascript size={40} /> }, 
+  { name: "TypeScript", icon: <SiTypescript size={40} /> },
+  { name: "jQuery", icon: <SiJquery size={40} /> },
+  { name: "AJAX", icon: <SiJquery size={40} /> }, 
+  { name: "React", icon: <SiReact size={40} /> },
+  { name: "Flutter", icon: <SiFlutter size={40} /> },
 ];
 
 const backendSkills: Skill[] = [
   { name: "Java", icon: <DiJava size={40} /> },
-  { name: "Node.js", icon: <SiNodedotjs size={30} /> },
-  { name: "Spring", icon: <SiSpring size={30} /> },
-  { name: "Oracle", icon: <SiOracle size={30} /> },
+  { name: "Node.js", icon: <SiNodedotjs size={40} /> },
+  { name: "Spring", icon: <SiSpring size={40} /> },
+  { name: "Oracle", icon: <SiOracle size={40} /> },
   { name: "MySQL", icon: <SiMysql size={40} /> },
   { name: "AWS", icon: <SiAmazonaws size={40} /> },
-  { name: "AJAX", icon: <SiJquery size={30} /> }, 
+  { name: "MyBatis", icon: <FaTools size={40} /> },
 ];
 
 const tools: Skill[] = [
-  { name: "Git", icon: <SiGit size={30} /> },
-  { name: "GitHub", icon: <SiGithub size={30} /> },
-  { name: "MyBatis", icon: <FaTools size={30} /> },
+  { name: "Git", icon: <SiGit size={40} /> },
+  { name: "GitHub", icon: <SiGithub size={40} /> },
 ];
 
 const Skills = () => {
@@ -55,7 +55,7 @@ const Skills = () => {
       <h2 className="text-4xl font-bold mb-8 text-center">SKILL & TOOLS</h2>
 
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold mb-4">Frontend</h3>
+        <h3 className="text-2xl font-semibold mb-6">Frontend</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
           {frontendSkills.map((skill) => (
             <div key={skill.name} className="flex flex-col items-center">
@@ -67,7 +67,7 @@ const Skills = () => {
       </div>
 
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold mb-4">Backend</h3>
+        <h3 className="text-2xl font-semibold mb-6">Backend</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
           {backendSkills.map((skill) => (
             <div key={skill.name} className="flex flex-col items-center">
@@ -79,11 +79,11 @@ const Skills = () => {
       </div>
 
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Tools</h3>
+        <h3 className="text-2xl font-semibold mb-6">Tools</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
           {tools.map((tool) => (
             <div key={tool.name} className="flex flex-col items-center">
-              <div className="text-white">{tool.icon}</div>
+              <div className="text-red-400">{tool.icon}</div>
               <span className="mt-2 text-sm">{tool.name}</span>
             </div>
           ))}

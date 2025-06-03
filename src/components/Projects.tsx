@@ -12,7 +12,7 @@ import {
   SiSpring,
 } from "react-icons/si";
 import { FaDatabase, FaJava, FaCode } from "react-icons/fa";
- 
+
 import HotelImg from "../img/Hotel.png";
 import BBookImg from "../img/BBook.png";
 import GameImg from "../img/Game.png";
@@ -281,7 +281,7 @@ const projectList: Project[] = [
         className="text-gray-300"
       />,
     ],
-    image: GameImg, 
+    image: GameImg,
   },
 ];
 
@@ -300,202 +300,204 @@ const Projects = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <h2 className="text-4xl font-bold text-center mb-12">PROJECTS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-        {projectList.map((proj, idx) => (
-          <div
-            key={proj.name}
-            className="relative bg-[#5555] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition w-[300px] h-[400px]"
-          >
-            <div className="flex flex-col justify-center h-full">
-              <div className="h-[256px] w-full">
-                <img
-                  src={proj.image}
-                  alt={proj.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+    <>
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <h2 className="text-4xl font-bold text-center mb-12">PROJECTS</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {projectList.map((proj, idx) => (
+            <div
+              key={proj.name}
+              className="relative bg-[#5555] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition w-[300px] h-[400px]"
+            >
+              <div className="flex flex-col justify-center h-full">
+                <div className="h-[256px] w-full">
+                  <img
+                    src={proj.image}
+                    alt={proj.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              <div className="h-20 flex items-center justify-center bg-[#5555]">
-                <h3 className="text-2xl font-bold text-white">{proj.name}</h3>
-              </div>
+                <div className="h-20 flex items-center justify-center bg-[#5555]">
+                  <h3 className="text-2xl font-bold text-white">{proj.name}</h3>
+                </div>
 
-              <div className="p-4 flex flex-wrap justify-center gap-3 bg-[#5555]">
-                {proj.techIcons.map((iconElem, i) => (
-                  <div
-                    key={i}
-                    className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
-                  >
-                    {iconElem}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="absolute inset-0 bg-[#5555] flex items-center justify-center opacity-0 hover:opacity-100 transition">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  openModal(idx);
-                }}
-                className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold mr-4"
-              >
-                자세히보기
-              </button>
-              <a
-                href={proj.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
-              >
-                링크이동
-              </a>
-            </div>
-
-            {open && selected === idx && (
-              <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-30">
-                <div className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative">
-                  <div className="px-8 py-4 flex-shrink-0">
-                    <button
-                      onClick={closeModal}
-                      className="absolute top-4 right-4 text-gray-300 hover:text-white"
+                <div className="p-4 flex flex-wrap justify-center gap-3 bg-[#5555]">
+                  {proj.techIcons.map((iconElem, i) => (
+                    <div
+                      key={i}
+                      className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
                     >
-                      <AiOutlineClose size={24} />
-                    </button>
-                    <h3 className="text-3xl font-bold mb-1">{proj.name}</h3>
-                    <p className="text-sm text-gray-400 flex items-center">
-                      <AiOutlineCalendar className="inline mr-1" />
-                      {proj.period}
-                    </p>
-                  </div>
+                      {iconElem}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-                  <div className="px-8 pt-4 pb-4 overflow-y-auto flex-1 bg-white text-black">
-                    <div className="mb-6">
-                      <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                        프로젝트 목표·소개
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2 text-black">
-                        {proj.goals.map((goal, gidx) => (
-                          <li key={gidx}>{goal}</li>
-                        ))}
-                      </ul>
+              <div className="absolute inset-0 bg-[#5555] flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openModal(idx);
+                  }}
+                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold mr-4"
+                >
+                  자세히보기
+                </button>
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
+                >
+                  링크이동
+                </a>
+              </div>
+
+              {open && selected === idx && (
+                <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-30">
+                  <div className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative">
+                    <div className="px-8 py-4 flex-shrink-0">
+                      <button
+                        onClick={closeModal}
+                        className="absolute top-4 right-4 text-gray-300 hover:text-white"
+                      >
+                        <AiOutlineClose size={24} />
+                      </button>
+                      <h3 className="text-3xl font-bold mb-1">{proj.name}</h3>
+                      <p className="text-sm text-gray-400 flex items-center">
+                        <AiOutlineCalendar className="inline mr-1" />
+                        {proj.period}
+                      </p>
                     </div>
 
-                    <div className="mb-6">
-                      <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                        개발 환경
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-black">
-                        <div>
-                          <h5 className="font-semibold">개발 도구</h5>
-                          <ul className="list-disc list-inside">
-                            {proj.environment.tools.map((tool, tidx) => (
-                              <li key={tidx}>{tool}</li>
-                            ))}
-                          </ul>
+                    <div className="px-8 pt-4 pb-4 overflow-y-auto flex-1 bg-white text-black">
+                      <div className="mb-6">
+                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
+                          프로젝트 목표·소개
+                        </h4>
+                        <ul className="list-disc list-inside space-y-2 text-black">
+                          {proj.goals.map((goal, gidx) => (
+                            <li key={gidx}>{goal}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mb-6">
+                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
+                          개발 환경
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-black">
+                          <div>
+                            <h5 className="font-semibold">개발 도구</h5>
+                            <ul className="list-disc list-inside">
+                              {proj.environment.tools.map((tool, tidx) => (
+                                <li key={tidx}>{tool}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h5 className="font-semibold">프론트엔드</h5>
+                            <ul className="list-disc list-inside">
+                              {proj.environment.frontend.map((fe, fid) => (
+                                <li key={fid}>{fe}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h5 className="font-semibold">백엔드</h5>
+                            <ul className="list-disc list-inside">
+                              {proj.environment.backend.map((be, bid) => (
+                                <li key={bid}>{be}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                        <div>
-                          <h5 className="font-semibold">프론트엔드</h5>
-                          <ul className="list-disc list-inside">
-                            {proj.environment.frontend.map((fe, fid) => (
-                              <li key={fid}>{fe}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 className="font-semibold">백엔드</h5>
-                          <ul className="list-disc list-inside">
-                            {proj.environment.backend.map((be, bid) => (
-                              <li key={bid}>{be}</li>
-                            ))}
-                          </ul>
-                        </div>
+                      </div>
+
+                      <div className="mb-6">
+                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
+                          개발 과정
+                        </h4>
+                        {proj.process.map((step, sidx) => (
+                          <div key={sidx} className="mb-4">
+                            <h5 className="text-xl font-semibold mb-2">
+                              {step.title}
+                            </h5>
+                            <ul className="list-disc list-inside space-y-1 text-black">
+                              {step.items.map((item, iidx) => (
+                                <li key={iidx}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mb-6">
+                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
+                          수행 결과물
+                        </h4>
+                        {proj.results.map((res, ridx) => (
+                          <div key={ridx} className="mb-4">
+                            <ul className="list-disc list-inside space-y-1 text-black">
+                              {res.items.map((item, iidx) => (
+                                <li key={iidx}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
+                          프로젝트 회고
+                        </h4>
+                        <ul className="list-disc list-inside space-y-2 text-black">
+                          <li>
+                            <span className="font-semibold">잘한 점:</span>{" "}
+                            {proj.retrospective.good}
+                          </li>
+                          <li>
+                            <span className="font-semibold">아쉬운 점:</span>{" "}
+                            {proj.retrospective.bad}
+                          </li>
+                          <li>
+                            <span className="font-semibold">개선할 점:</span>{" "}
+                            {proj.retrospective.improve}
+                          </li>
+                          <li>
+                            <span className="font-semibold">오류 해결:</span>{" "}
+                            {proj.retrospective.bugfix}
+                          </li>
+                          <li>
+                            <span className="font-semibold">느낀 점:</span>{" "}
+                            {proj.retrospective.lesson}
+                          </li>
+                        </ul>
                       </div>
                     </div>
 
-                    <div className="mb-6">
-                      <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                        개발 과정
-                      </h4>
-                      {proj.process.map((step, sidx) => (
-                        <div key={sidx} className="mb-4">
-                          <h5 className="text-xl font-semibold mb-2">
-                            {step.title}
-                          </h5>
-                          <ul className="list-disc list-inside space-y-1 text-black">
-                            {step.items.map((item, iidx) => (
-                              <li key={iidx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                        수행 결과물
-                      </h4>
-                      {proj.results.map((res, ridx) => (
-                        <div key={ridx} className="mb-4">
-                          <ul className="list-disc list-inside space-y-1 text-black">
-                            {res.items.map((item, iidx) => (
-                              <li key={iidx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div>
-                      <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                        프로젝트 회고
-                      </h4>
-                      <ul className="list-disc list-inside space-y-2 text-black">
-                        <li>
-                          <span className="font-semibold">잘한 점:</span>{" "}
-                          {proj.retrospective.good}
-                        </li>
-                        <li>
-                          <span className="font-semibold">아쉬운 점:</span>{" "}
-                          {proj.retrospective.bad}
-                        </li>
-                        <li>
-                          <span className="font-semibold">개선할 점:</span>{" "}
-                          {proj.retrospective.improve}
-                        </li>
-                        <li>
-                          <span className="font-semibold">오류 해결:</span>{" "}
-                          {proj.retrospective.bugfix}
-                        </li>
-                        <li>
-                          <span className="font-semibold">느낀 점:</span>{" "}
-                          {proj.retrospective.lesson}
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="px-8 py-8 flex-shrink-0">
-                    <div className="flex justify-center">
-                      <a
-                        href={proj.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
-                      >
-                        프로젝트 보러가기
-                      </a>
+                    <div className="px-8 py-8 flex-shrink-0">
+                      <div className="flex justify-center">
+                        <a
+                          href={proj.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
+                        >
+                          프로젝트 보러가기
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

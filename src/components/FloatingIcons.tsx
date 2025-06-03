@@ -21,7 +21,7 @@ const FloatingIcons = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 flex flex-col space-y-4 z-20">
+    <div className="fixed bottom-8 right-8 flex flex-col space-y-4 z-20">
       <div className="relative flex items-center">
         <button
           onClick={copyEmail}
@@ -50,10 +50,10 @@ const FloatingIcons = () => {
       </a>
 
       <a
-        href="https://open.kakao.com/o/yourprofile"
+        href="https://open.kakao.com/o/soVkNRzh"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-yellow-500 p-3 rounded-full shadow-lg hover:bg-yellow-400 transition"
+        className="bg-gray-600 p-3 rounded-full shadow-lg hover:bg-gray-500 transition"
       >
         <SiKakaotalk size={24} className="text-white" />
       </a>
