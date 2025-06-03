@@ -8,10 +8,11 @@ import {
   SiReact,
   SiTypescript,
   SiTailwindcss,
-  SiNodedotjs,
-  SiSpring,
+  SiThymeleaf,
+  SiSpringboot,
+  SiSpringsecurity,
 } from "react-icons/si";
-import { FaDatabase, FaJava, FaCode } from "react-icons/fa";
+import { FaDatabase, FaJava, FaCode, FaTools, FaAws } from "react-icons/fa";
 
 import HotelImg from "../img/MiniprojectMain.png";
 import BBookImg from "../img/TeamprojectMain.png";
@@ -44,7 +45,7 @@ type Project = {
   };
   link: string;
   techIcons: JSX.Element[];
-  image: string; // import된 이미지 경로
+  image: string;
 };
 
 const projectList: Project[] = [
@@ -109,17 +110,14 @@ const projectList: Project[] = [
     },
     link: "https://www.canva.com/design/DAGh8bPtQp8/SHcUTKq_L6OpoUokG-a4ew/view",
     techIcons: [
-      <FaJava key="java" size={20} className="text-yellow-400" />,
+      <FaJava key="java" size={20} className="text-red-500" />,
       <FaDatabase key="mysql" size={20} className="text-blue-400" />,
-      <FaCode key="servlet" size={20} className="text-gray-400" />,
-      <SiReact key="react" size={20} className="text-cyan-400" />,
-      <SiTailwindcss key="tailwind" size={20} className="text-teal-400" />,
-      <SiTypescript key="ts" size={20} className="text-blue-500" />,
+      <FaCode key="servlet" size={20} className="text-gray-300" />,
     ],
-    image: HotelImg, // import된 Hotel.png
+    image: HotelImg,
   },
   {
-    name: "Bbook",
+    name: "도서 쇼핑몰",
     period: "2024.12.24. ~ 2025.01.24.",
     goals: [
       "사용자의 편리한 소비 경험을 위해 도서 쇼핑몰 사이트를 기획",
@@ -148,6 +146,8 @@ const projectList: Project[] = [
           "관리자 페이지: 매출액 비교 및 주별·월별 추이 분석, 상품 관리 및 통계 자료 제공, 리뷰·신고 관리 및 클린봇 시스템",
         ],
       },
+    ],
+    results: [
       {
         title: "수행 결과물",
         items: [
@@ -156,18 +156,6 @@ const projectList: Project[] = [
           "리뷰 작성 후 상품 평가 자동 업데이트, 중복 좋아요·신고 방지",
           "상품 관리: CRUD, 필터링·정렬·검색 기능, 엑셀 다운로드 지원",
           "텔레그램 봇 연동: 상품 신규 등록 시 관리자에게 자동 알림 발송",
-        ],
-      },
-    ],
-    results: [
-      {
-        title: "프로젝트 회고",
-        items: [
-          "잘한 점: 도서 추천 시스템 및 클린봇 기능 성공적으로 구현",
-          "아쉬운 점: 기능 개발에 집중하느라 디자인 완성도가 다소 부족함",
-          "개선할 점: 기능 개발과 디자인을 균형 있게 고려하는 방법 모색 필요",
-          "오류 해결: 스크립트 중복 바인딩 문제를 이벤트 리스너 등록 방식과 코드 흐름 수정으로 해결",
-          "느낀 점: 팀원 간 소통 부족을 느꼈으며, 기능 개발 중 테스트의 중요성을 재확인함",
         ],
       },
     ],
@@ -185,17 +173,16 @@ const projectList: Project[] = [
     },
     link: "https://www.canva.com/design/DAGhgFhA4R4/lDFugDHqd5-S7GrQ4pOY_A/view",
     techIcons: [
-      <SiSpring key="spring" size={20} className="text-green-400" />,
+      <FaJava key="java" size={20} className="text-red-500" />,
+      <SiSpringboot key="spring" size={20} className="text-green-400" />,
+      <SiSpringsecurity key="security" size={20} className="text-green-400" />,
+      <SiThymeleaf key="thymeleaf" size={20} className="text-green-600" />,
       <FaDatabase key="mysql" size={20} className="text-blue-400" />,
-      <SiNodedotjs key="node" size={20} className="text-green-500" />,
-      <SiReact key="react" size={20} className="text-cyan-400" />,
-      <FaJava key="java" size={20} className="text-yellow-400" />,
-      <AiOutlineCalendar key="calendar" size={20} className="text-gray-300" />,
     ],
-    image: BBookImg, // import된 BBook.png
+    image: BBookImg,
   },
   {
-    name: "한판해",
+    name: "보드 게임 플랫폼",
     period: "2025.02.10. ~ 2025.03.07.",
     goals: [
       "전통적인 웹 보드게임의 인기가 하락하는 추세에서 반전을 노리고 기획",
@@ -272,15 +259,11 @@ const projectList: Project[] = [
     },
     link: "https://www.canva.com/design/DAGg2IUk3nw/7tEwjDkB86q2If2hSnVAMg/view",
     techIcons: [
-      <SiSpring key="spring" size={20} className="text-green-400" />,
+      <FaJava key="java" size={20} className="text-red-500" />,
+      <SiSpringboot key="spring" size={20} className="text-green-400" />,
       <FaDatabase key="mysql" size={20} className="text-blue-400" />,
-      <SiReact key="react" size={20} className="text-cyan-400" />,
-      <FaCode key="code" size={20} className="text-gray-300" />,
-      <AiOutlineCalendar
-        key="calendar-2"
-        size={20}
-        className="text-gray-300"
-      />,
+      <FaTools key="tools" size={20} className="text-gray-700" />,
+      <FaAws key="aws" size={20} className="text-orange-400" />,
     ],
     image: GameImg,
   },

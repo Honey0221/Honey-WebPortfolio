@@ -38,11 +38,12 @@
   font-weight: 500;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  scroll-padding-top: 4rem; 
+  scroll-padding-top: 4rem;
   font-family: "Nanum Gothic", sans-serif;
 }
 
