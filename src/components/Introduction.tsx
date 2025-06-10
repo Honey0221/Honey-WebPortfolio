@@ -42,41 +42,41 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
   };
 
   return (
-    <div className={`w-full max-w-[1000px] transition-all duration-700 ease-in-out mb-10 hover:scale-[1.01] transform`}>
+    <div className={`w-full max-w-[1000px] transition-all duration-700 ease-in-out mb-6 sm:mb-10 hover:scale-[1.01] transform`}>
       <div className="relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300">
         {/* 통합 카드 컨테이너 */}
         <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''}`}>
           {/* 메인 카드 */}
           <div className={`transition-all duration-500 ease-out z-10 ${expanded ? 'md:w-[35%]' : 'w-full'}`}>
-            <div className={`h-2 ${getColorClass('bg')}`}></div>
-            <div className="p-8 text-white">
+            <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
+            <div className="p-5 sm:p-8 text-white">
               <div className="flex items-center">
-                <div className={`p-3 ${getColorClass('bg')} rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.25)] mr-5 transition-all duration-300 ${expanded ? 'scale-110' : 'hover:scale-105'}`}>
+                <div className={`p-2 sm:p-3 ${getColorClass('bg')} rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.25)] mr-3 sm:mr-5 transition-all duration-300 ${expanded ? 'scale-110' : 'hover:scale-105'}`}>
                   {icon}
                 </div>
-                <h5 className="text-2xl font-bold">{title}</h5>
+                <h5 className="text-xl sm:text-2xl font-bold">{title}</h5>
                 {bullets.length > 0 && (
                   <button
                     onClick={() => setExpanded(!expanded)}
-                    className={`ml-auto flex items-center text-sm font-medium ${getColorClass('text')} focus:outline-none transition-all duration-300 hover:scale-110 hover:opacity-80`}
+                    className={`ml-auto flex items-center text-xs sm:text-sm font-medium ${getColorClass('text')} focus:outline-none transition-all duration-300 hover:scale-110 hover:opacity-80`}
                   >
                     {expanded ? (
                       <>
-                        <span>접기</span>
-                        <BsChevronLeft className="ml-1.5" />
+                        <span className="hidden xs:inline">접기</span>
+                        <BsChevronLeft className="ml-0 xs:ml-1.5" />
                       </>
                     ) : (
                       <>
-                        <span>펼치기</span>
-                        <BsChevronRight className="ml-1.5" />
+                        <span className="hidden xs:inline">펼치기</span>
+                        <BsChevronRight className="ml-0 xs:ml-1.5" />
                       </>
                     )}
                   </button>
                 )}
               </div>
 
-              <div className="mt-5 text-gray-300 leading-relaxed">
-                <p className="text-base">{summary}</p>
+              <div className="mt-4 sm:mt-5 text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base">{summary}</p>
               </div>
             </div>
           </div>
@@ -91,16 +91,16 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
           {/* 확장된 내용 */}
           {expanded && (
             <div className="md:w-[65%] overflow-hidden transform origin-left animate-expandRight">
-              <div className={`h-2 ${getColorClass('bg')}`}></div>
-              <div className="p-8 text-white">
-                <h5 className="text-xl font-medium mb-6 animate-slideDown opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>주요 내용</h5>
-                <ul className="space-y-5 list-none pl-0">
+              <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
+              <div className="p-5 sm:p-8 text-white">
+                <h5 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 animate-slideDown opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>주요 내용</h5>
+                <ul className="space-y-3 sm:space-y-5 list-none pl-0">
                   {bullets.map((point: string, idx: number) => (
-                    <li key={idx} className="flex items-start mb-4 animate-slideDown opacity-0" style={{ animationDelay: `${0.3 + idx * 0.1}s`, animationFillMode: 'forwards' }}>
-                      <div className={`p-2 ${getColorClass('bg')} rounded-full mr-4 mt-0.5 shadow-[0_0_10px_rgba(0,0,0,0.15)]`}>
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <li key={idx} className="flex items-start mb-3 sm:mb-4 animate-slideDown opacity-0" style={{ animationDelay: `${0.3 + idx * 0.1}s`, animationFillMode: 'forwards' }}>
+                      <div className={`p-1.5 sm:p-2 ${getColorClass('bg')} rounded-full mr-3 sm:mr-4 mt-0.5 shadow-[0_0_10px_rgba(0,0,0,0.15)]`}>
+                        <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white rounded-full"></div>
                       </div>
-                      <span className="text-base">{point}</span>
+                      <span className="text-sm sm:text-base">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -116,7 +116,7 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
 const Introduction = () => {
   const cardData: CardProps[] = [
     {
-      icon: <BsLightningChargeFill className="w-7 h-7 text-white" />,
+      icon: <BsLightningChargeFill className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "문제 해결 능력",
       summary: "논리적 사고를 바탕으로 다양한 문제 상황에 효과적으로 대응합니다.",
       bullets: [
@@ -127,7 +127,7 @@ const Introduction = () => {
       color: "purple"
     },
     {
-      icon: <BsCompass className="w-7 h-7 text-white" />,
+      icon: <BsCompass className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "진로 결정 계기",
       summary: "IT 기술을 통해 실질적인 가치를 창출하고 사회에 기여하고자 개발자 진로를 선택했습니다.",
       bullets: [
@@ -138,7 +138,7 @@ const Introduction = () => {
       color: "pink"
     },
     {
-      icon: <BsBriefcaseFill className="w-7 h-7 text-white" />,
+      icon: <BsBriefcaseFill className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "회사에서의 기여",
       summary: "문제 해결 능력과 협업을 통해 시스템 품질과 팀 시너지를 동시에 향상시킵니다.",
       bullets: [
@@ -167,12 +167,12 @@ const Introduction = () => {
   }, []);
 
   return (
-    <div className="relative py-24 z-10">
-      <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-        <div className="mb-20 text-center">
-          <h2 className="text-6xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">INTRODUCTION</h2>
-          <div className="h-1.5 w-56 mx-auto bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mt-3 rounded-full"></div>
-          <p className="text-gray-300 mt-8 max-w-3xl mx-auto text-lg leading-relaxed">저의 역량과 경험, 가치관을 소개합니다</p>
+    <div className="relative py-16 sm:py-20 md:py-24 z-10 w-full px-4">
+      <div className="max-w-[1280px] mx-auto relative z-10">
+        <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">INTRODUCTION</h2>
+          <div className="h-1 sm:h-1.5 w-32 sm:w-44 md:w-56 mx-auto bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mt-2 sm:mt-3 rounded-full"></div>
+          <p className="text-gray-300 mt-4 sm:mt-6 md:mt-8 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed px-2">저의 역량과 경험, 가치관을 소개합니다</p>
         </div>
 
         <div className="flex flex-col items-center">
@@ -190,9 +190,9 @@ const Introduction = () => {
       </div>
 
       {/* 배경 효과들 */}
-      <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-      <div className="absolute top-0 -right-4 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-40 left-1/3 w-96 h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-0 -left-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+      <div className="absolute top-0 -right-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-20 sm:bottom-40 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
     </div>
   );
 };
