@@ -16,31 +16,25 @@ const Career = () => {
             </h4>
             <ul className="text-base">
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                자바 프로그래밍과 다양한 라이브러리를 활용하여
-                백엔드 서버를 구축하고 Spring Framework 및 JPA를 이용한 웹
-                애플리케이션 개발
+                자바 프로그래밍과 다양한 라이브러리를 활용하여 백엔드 서버를 구축하고 Spring Boot 및 JPA를 이용한 웹 애플리케이션 개발
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                데이터베이스 활용: 오라클 DB와 JDBC, MySQL를 활용한 데이터 관리 및
-                연동
+                데이터베이스 활용: Oracle DB와 JDBC, MySQL를 활용한 데이터 관리 및 연동
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                프론트엔드 개발: HTML, CSS, JavaScript, React, jQuery, JSP & Servlet을
-                활용한 UI 설계 및 구현
+                프론트엔드 개발: HTML, CSS, JavaScript, React, jQuery, JSP & Thymeleaf를 활용한 UI 설계 및 구현
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
                 모바일 앱 개발: Flutter 및 Dart를 활용한 모바일 앱 UI 및 기능 개발
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                팀 협업 및 버전 관리: Git을 활용한 협업 및 프로젝트 관리 실무 경험
+                팀 협업 및 버전 관리: Git과 GitHub를 활용한 협업 및 프로젝트 관리 실무 경험
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                비동기 처리 및 성능 최적화: Ajax 및 RESTful API를 활용한 효율적인
-                데이터 처리
+                비동기 처리 및 성능 최적화: Ajax 및 Restful API를 활용한 효율적인 데이터 처리
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                클라우드 및 서버 운영: AWS 클라우드 서비스를 활용한 프로젝트 배포 및
-                리눅스 서버 운영
+                클라우드 및 서버 운영: AWS 클라우드 서비스를 활용한 프로젝트 배포 및 리눅스 서버 운영
               </li>
               <li className="pl-2.5 mb-1 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
                 팀 프로젝트 경험: 도서 쇼핑몰 프로젝트 진행
@@ -57,7 +51,7 @@ const Career = () => {
             </h4>
             <ul className="text-base">
               <li className="pl-2.5 relative before:absolute before:w-1 before:h-1 before:bg-[#A6A6A6] before:block before:rounded-full before:left-0 before:top-[0.625rem]">
-                2015.08 - 소방안전관리자1급 (한국소방안전협회) 취득
+                2015.08 - 소방안전관리자 1급 (한국소방안전협회) 취득
               </li>
             </ul>
           </div>
