@@ -9,8 +9,13 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiThymeleaf,
+  SiGithub,
   SiSpringboot,
   SiSpringsecurity,
+  SiVite,
+  SiBootstrap,
+  SiMysql,
+  SiGit,
 } from "react-icons/si";
 import { FaDatabase, FaJava, FaCode, FaTools, FaAws } from "react-icons/fa";
 
@@ -33,7 +38,6 @@ type Project = {
     items: string[];
   }[];
   results: {
-    title: string;
     items: string[];
   }[];
   retrospective: {
@@ -41,7 +45,7 @@ type Project = {
     bad: string;
     improve: string;
     bugfix: string;
-    lesson: string;
+    lesson: string | string[];
   };
   link: string;
   techIcons: JSX.Element[];
@@ -88,9 +92,8 @@ const projectList: Project[] = [
     ],
     results: [
       {
-        title: "수행 결과물",
         items: [
-          "객실 상태 관리: 객실에 문제 발생 시 대응할 수 있도록 ‘점검중’ 상태 추가",
+          "객실 상태 관리: 객실에 문제 발생 시 대응할 수 있도록 '점검중' 상태 추가",
           "객실 갤러리: Swiper 라이브러리를 활용하여 객실별 이미지 슬라이드 제공",
           "예약 현황 조회: 층별, 주간, 월간 단위로 예약 내역 확인, DB 데이터를 활용하여 예약 현황 출력",
         ],
@@ -111,8 +114,10 @@ const projectList: Project[] = [
     link: "https://www.canva.com/design/DAGh8bPtQp8/SHcUTKq_L6OpoUokG-a4ew/view",
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
-      <FaDatabase key="mysql" size={20} className="text-blue-400" />,
+      <SiMysql key="mysql" size={20} className="text-blue-400" />,
+      <SiBootstrap key="bootstrap" size={20} className="text-purple-500" />,
       <FaCode key="servlet" size={20} className="text-gray-300" />,
+      <SiGit key="git" size={20} className="text-gray-500" />,
     ],
     image: HotelImg,
   },
@@ -149,7 +154,6 @@ const projectList: Project[] = [
     ],
     results: [
       {
-        title: "수행 결과물",
         items: [
           "로그인 및 상품 구매 여부 확인 후 리뷰 작성 가능",
           "클린봇 기능: OpenAI를 사용해 부정적 내용 자동 분석, 제재된 리뷰에 안내 문구 표시",
@@ -175,9 +179,10 @@ const projectList: Project[] = [
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
       <SiSpringboot key="spring" size={20} className="text-green-400" />,
-      <SiSpringsecurity key="security" size={20} className="text-green-400" />,
       <SiThymeleaf key="thymeleaf" size={20} className="text-green-600" />,
-      <FaDatabase key="mysql" size={20} className="text-blue-400" />,
+      <SiBootstrap key="bootstrap" size={20} className="text-purple-500" />,
+      <SiMysql key="mysql" size={20} className="text-blue-400" />,
+      <SiGithub key="github" size={20} className="text-gray-300" />,
     ],
     image: BBookImg,
   },
@@ -237,7 +242,6 @@ const projectList: Project[] = [
     ],
     results: [
       {
-        title: "수행 결과물",
         items: [
           "중복 코드 제거를 위한 공통 모듈 분리 및 리팩토링",
           "XML 기반 매핑으로 MyBatis 활용, 효율적인 데이터 조회 구현",
@@ -261,13 +265,247 @@ const projectList: Project[] = [
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
       <SiSpringboot key="spring" size={20} className="text-green-400" />,
-      <FaDatabase key="mysql" size={20} className="text-blue-400" />,
+      <SiMysql key="mysql" size={20} className="text-blue-400" />,
       <FaTools key="tools" size={20} className="text-gray-700" />,
+      <SiGithub key="github" size={20} className="text-gray-300" />,
       <FaAws key="aws" size={20} className="text-orange-400" />,
     ],
     image: GameImg,
   },
+  {
+    name: "웹 포트폴리오",
+    period: "2025.05.27. ~ 진행중.",
+    goals: [
+      "백엔드 중심의 프로젝트 경험에서 벗어나 프론트엔드 기술 스택에 대한 이해를 넓히기 위해 SRP 방식으로 제작",
+      "나를 소개하는 웹사이트를 직접 구현하는 과정에서 프론트엔드 기술을 스스로 학습하고, 표현력과 구현력을 함께 향상시키는 것을 목표로 기획"
+    ],
+    environment: {
+      tools: ["GitHub", "Vite"],
+      frontend: ["React", "TypeScript", "Tailwind CSS"],
+      backend: [],
+    },
+    process: [],
+    results: [],
+    retrospective: {
+      good: "",
+      bad: "",
+      improve: "",
+      bugfix: "",
+      lesson: [
+        "React의 컴포넌트 기반 개발 방식의 효율성과 유지보수 편리성을 경험하며 코드 구조화의 필요성을 체감했습니다.",
+        "나에게 부족한 기술을 스스로 학습하고 적용하는 과정에서 문제 해결 능력과 자기 주도적 학습 태도를 습득했습니다.",
+        "백엔드 개발과 달리 프론트엔드는 사용자 경험에 직접적인 영향을 주는 만큼 섬세한 표현과 반응형 설계가 필수적임을 깨달았습니다.",
+      ],
+    },
+    link: "https://wlgjsrns.mycafe24.com",
+    techIcons: [
+      <SiReact key="react" size={20} className="text-blue-400" />,
+      <SiTypescript key="typescript" size={20} className="text-green-600" />,
+      <SiTailwindcss key="tailwind" size={20} className="text-purple-500" />,
+      <SiGithub key="github" size={20} className="text-gray-300" />,
+      <SiVite key="vite" size={20} className="text-blue-400" />,
+    ],
+    image: PortfolioImg,
+  },
 ];
+
+// 프로젝트 모달 컴포넌트
+interface ProjectModalProps {
+  project: Project;
+  onClose: () => void;
+}
+
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  // 웹 포트폴리오인지 확인
+  const isPortfolio = project.name === "웹 포트폴리오";
+
+  // 회고가 문자열인지 배열인지 확인하는 함수
+  const renderLesson = () => {
+    if (Array.isArray(project.retrospective.lesson)) {
+      return (
+        <ul className="list-disc ml-5 text-gray-700">
+          {project.retrospective.lesson.map((item, idx) => (
+            <li key={idx} className="mb-2">{item}</li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className="text-gray-700">{project.retrospective.lesson}</p>;
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-30">
+      <div className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative">
+        {/* 헤더 영역 */}
+        <div className="px-8 py-4 flex-shrink-0 bg-gradient-to-r from-gray-900 to-gray-700">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-300 hover:text-white"
+          >
+            <AiOutlineClose size={24} />
+          </button>
+          <h3 className="text-3xl font-bold mb-1">{project.name}</h3>
+          <p className="text-sm text-gray-400 flex items-center">
+            <AiOutlineCalendar className="inline mr-1" />
+            {project.period}
+          </p>
+        </div>
+
+        {/* 콘텐츠 영역 */}
+        <div className="px-8 pt-4 pb-4 overflow-y-auto flex-1 bg-gray-100 text-black">
+          {/* 프로젝트 이미지 영역 */}
+          <div className="mb-6 flex justify-center">
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full max-w-xl rounded-lg shadow-md"
+            />
+          </div>
+
+          {/* 목표 및 소개 영역 */}
+          <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
+            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+              프로젝트 목표·소개
+            </h4>
+            <ul className="list-disc ml-6 space-y-2 text-gray-700">
+              {project.goals.map((goal, gidx) => (
+                <li key={gidx}>{goal}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 개발 환경 영역 */}
+          <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
+            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+              개발 환경
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-700">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h5 className="font-semibold text-blue-700 mb-2">개발 도구</h5>
+                <ul className="list-disc ml-5">
+                  {project.environment.tools.map((tool, tidx) => (
+                    <li key={tidx}>{tool}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h5 className="font-semibold text-green-700 mb-2">프론트엔드</h5>
+                <ul className="list-disc ml-5">
+                  {project.environment.frontend.map((fe, fid) => (
+                    <li key={fid}>{fe}</li>
+                  ))}
+                </ul>
+              </div>
+              {project.environment.backend.length > 0 && (
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-purple-700 mb-2">백엔드</h5>
+                  <ul className="list-disc ml-5">
+                    {project.environment.backend.map((be, bid) => (
+                      <li key={bid}>{be}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 개발 과정 영역 - 프로세스가 있을 때만 표시 */}
+          {project.process.length > 0 && (
+            <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
+              <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+                개발 과정
+              </h4>
+              {project.process.map((step, sidx) => (
+                <div key={sidx} className="mb-4 bg-gray-50 p-4 rounded-lg">
+                  <h5 className="text-xl font-semibold mb-2 text-gray-800">
+                    {step.title}
+                  </h5>
+                  <ul className="list-disc ml-5 space-y-1 text-gray-700">
+                    {step.items.map((item, iidx) => (
+                      <li key={iidx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 수행 결과물 영역 - 결과물이 있을 때만 표시 */}
+          {project.results.length > 0 && (
+            <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
+              <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+                주요 기능
+              </h4>
+              {project.results.map((res, ridx) => (
+                <div key={ridx} className="mb-4">
+                  <ul className="list-disc ml-5 space-y-1 text-gray-700">
+                    {res.items.map((item, iidx) => (
+                      <li key={iidx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 프로젝트 회고 영역 */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+              프로젝트 회고
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {project.retrospective.good && (
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-green-700 mb-2">잘한 점</h5>
+                  <p className="text-gray-700">{project.retrospective.good}</p>
+                </div>
+              )}
+              {project.retrospective.bad && (
+                <div className="bg-red-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-red-700 mb-2">아쉬운 점</h5>
+                  <p className="text-gray-700">{project.retrospective.bad}</p>
+                </div>
+              )}
+              {project.retrospective.improve && (
+                <div className="bg-yellow-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-yellow-700 mb-2">개선할 점</h5>
+                  <p className="text-gray-700">{project.retrospective.improve}</p>
+                </div>
+              )}
+              {project.retrospective.bugfix && (
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-blue-700 mb-2">오류 해결</h5>
+                  <p className="text-gray-700">{project.retrospective.bugfix}</p>
+                </div>
+              )}
+              <div className="md:col-span-2 bg-indigo-50 p-4 rounded-lg">
+                <h5 className="font-semibold text-indigo-700 mb-2">느낀 점</h5>
+                {renderLesson()}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 푸터 영역 - 웹 포트폴리오가 아닐 때만 버튼 표시 */}
+        <div className="px-8 py-6 flex-shrink-0 bg-gradient-to-r from-gray-700 to-gray-900">
+          <div className="flex justify-center">
+            {!isPortfolio && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 flex items-center"
+              >
+                <AiOutlineLink className="mr-2" />
+                프로젝트 보러가기
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Projects = () => {
   const [selected, setSelected] = useState<number | null>(null);
@@ -324,158 +562,25 @@ const Projects = () => {
                     e.stopPropagation();
                     openModal(idx);
                   }}
-                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold mr-4"
+                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold mr-4"
                 >
                   자세히보기
                 </button>
-                <a
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
-                >
-                  링크이동
-                </a>
+                {proj.name !== "웹 포트폴리오" && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
+                  >
+                    링크이동
+                  </a>
+                )}
               </div>
 
               {open && selected === idx && (
-                <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-30">
-                  <div className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative">
-                    <div className="px-8 py-4 flex-shrink-0">
-                      <button
-                        onClick={closeModal}
-                        className="absolute top-4 right-4 text-gray-300 hover:text-white"
-                      >
-                        <AiOutlineClose size={24} />
-                      </button>
-                      <h3 className="text-3xl font-bold mb-1">{proj.name}</h3>
-                      <p className="text-sm text-gray-400 flex items-center">
-                        <AiOutlineCalendar className="inline mr-1" />
-                        {proj.period}
-                      </p>
-                    </div>
-
-                    <div className="px-8 pt-4 pb-4 overflow-y-auto flex-1 bg-white text-black">
-                      <div className="mb-6">
-                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                          프로젝트 목표·소개
-                        </h4>
-                        <ul className="list-disc list-inside space-y-2 text-black">
-                          {proj.goals.map((goal, gidx) => (
-                            <li key={gidx}>{goal}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                          개발 환경
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-black">
-                          <div>
-                            <h5 className="font-semibold">개발 도구</h5>
-                            <ul className="list-disc list-inside">
-                              {proj.environment.tools.map((tool, tidx) => (
-                                <li key={tidx}>{tool}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h5 className="font-semibold">프론트엔드</h5>
-                            <ul className="list-disc list-inside">
-                              {proj.environment.frontend.map((fe, fid) => (
-                                <li key={fid}>{fe}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h5 className="font-semibold">백엔드</h5>
-                            <ul className="list-disc list-inside">
-                              {proj.environment.backend.map((be, bid) => (
-                                <li key={bid}>{be}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                          개발 과정
-                        </h4>
-                        {proj.process.map((step, sidx) => (
-                          <div key={sidx} className="mb-4">
-                            <h5 className="text-xl font-semibold mb-2">
-                              {step.title}
-                            </h5>
-                            <ul className="list-disc list-inside space-y-1 text-black">
-                              {step.items.map((item, iidx) => (
-                                <li key={iidx}>{item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                          수행 결과물
-                        </h4>
-                        {proj.results.map((res, ridx) => (
-                          <div key={ridx} className="mb-4">
-                            <ul className="list-disc list-inside space-y-1 text-black">
-                              {res.items.map((item, iidx) => (
-                                <li key={iidx}>{item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div>
-                        <h4 className="text-2xl font-semibold border-b border-gray-600 pb-1 mb-4">
-                          프로젝트 회고
-                        </h4>
-                        <ul className="list-disc list-inside space-y-2 text-black">
-                          <li>
-                            <span className="font-semibold">잘한 점:</span>{" "}
-                            {proj.retrospective.good}
-                          </li>
-                          <li>
-                            <span className="font-semibold">아쉬운 점:</span>{" "}
-                            {proj.retrospective.bad}
-                          </li>
-                          <li>
-                            <span className="font-semibold">개선할 점:</span>{" "}
-                            {proj.retrospective.improve}
-                          </li>
-                          <li>
-                            <span className="font-semibold">오류 해결:</span>{" "}
-                            {proj.retrospective.bugfix}
-                          </li>
-                          <li>
-                            <span className="font-semibold">느낀 점:</span>{" "}
-                            {proj.retrospective.lesson}
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="px-8 py-8 flex-shrink-0">
-                      <div className="flex justify-center">
-                        <a
-                          href={proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#5555] hover:font-semibold"
-                        >
-                          프로젝트 보러가기
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ProjectModal project={proj} onClose={closeModal} />
               )}
             </div>
           ))}
