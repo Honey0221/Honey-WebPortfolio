@@ -1,8 +1,70 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SelfPicture from "../img/self-picture.jpg";
 import { FaCode, FaServer, FaUsers, FaLightbulb } from "react-icons/fa";
 
 const Profile = () => {
+  // 컴포넌트 마운트 시 스타일 추가
+  useEffect(() => {
+    const styleElement = document.createElement('style');
+    styleElement.setAttribute('data-profile-styles', 'true');
+    styleElement.textContent = `
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .perspective {
+        perspective: 1000px;
+      }
+      
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      
+      .my-rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      
+      .group:hover .group-hover\\:my-rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      
+      .shimmer {
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite;
+      }
+      
+      @keyframes shimmer {
+        0% { background-position: -100% 0; }
+        100% { background-position: 200% 0; }
+      }
+    `;
+    document.head.appendChild(styleElement);
+
+    // 컴포넌트 언마운트 시 스타일 제거
+    return () => {
+      const styleToRemove = document.querySelector('style[data-profile-styles]');
+      if (styleToRemove) {
+        styleToRemove.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="relative py-16 z-10">
       <div className="flex flex-col md:flex-row max-w-[1200px] items-center justify-center mx-auto px-6 text-white">
