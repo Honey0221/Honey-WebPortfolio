@@ -1,4 +1,4 @@
-import React, { JSX, useState } from "react";
+import React, { JSX, useState, useEffect } from "react";
 import {
   AiOutlineClose,
   AiOutlineLink,
@@ -510,6 +510,21 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 const Projects = () => {
   const [selected, setSelected] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 모바일 환경 감지
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   const openModal = (idx: number) => {
     setSelected(idx);
@@ -530,6 +545,7 @@ const Projects = () => {
             <div
               key={proj.name}
               className="relative bg-[#5555] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition w-[300px] h-[400px]"
+              onClick={() => isMobile && openModal(idx)}
             >
               <div className="flex flex-col justify-center h-full">
                 <div className="h-[256px] w-full">
@@ -566,16 +582,16 @@ const Projects = () => {
                 >
                   자세히보기
                 </button>
-                {proj.name !== "웹 포트폴리오" && (
-                <a
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
+                {proj.name !== "웹 포트폴리오" && !isMobile && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
-                >
-                  링크이동
-                </a>
+                  >
+                    링크이동
+                  </a>
                 )}
               </div>
 
