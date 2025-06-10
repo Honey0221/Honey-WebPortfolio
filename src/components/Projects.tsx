@@ -209,34 +209,34 @@ const projectList: Project[] = [
         ],
       },
       {
-        title: "좌측 패널 기능",
+        title: "로비 좌측 패널 기능",
         items: [
           "유저 프로필 확인",
           "게임 매칭 및 AI 대전 시작 버튼 배치",
-          "현재 로비 접속자 목록 표시",
+          "현재 접속자 목록 표시",
         ],
       },
       {
-        title: "중앙 패널 기능",
+        title: "로비 중앙 패널 기능",
         items: [
           "관리자 전용 공지사항 작성",
           "유저 공략 및 자유 게시판 제공",
         ],
       },
       {
-        title: "우측 패널 기능",
+        title: "로비 우측 패널 기능",
         items: [
           "유저 및 관리자 간 채팅창 제공",
           "귓속말 및 쪽지 기능 확장 가능",
         ],
       },
       {
-        title: "게임 화면 로직",
+        title: "게임 화면",
         items: [
-          "게임 생성, 규칙, 결과 처리",
-          "유효한 착수 지점 표시 및 자동 턴 넘김",
-          "시간 초과 시 자동 착수 로직 구현",
-          "실시간 채팅 및 빠른 대화 기능 지원",
+          "게임 생성, 규칙, 결과 처리 로직 구현",
+          "마지막 착수, 유효한 착수 지점 표시 안내",
+          "제한 시간 초과 시 자동 착수 및 자동 턴 넘김 로직 구현",
+          "실시간 채팅 및 빠른 대화 버튼 제공",
         ],
       },
     ],
@@ -567,15 +567,15 @@ const Projects = () => {
                   자세히보기
                 </button>
                 {proj.name !== "웹 포트폴리오" && (
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                     className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
-                  >
-                    링크이동
-                  </a>
+                >
+                  링크이동
+                </a>
                 )}
               </div>
 
