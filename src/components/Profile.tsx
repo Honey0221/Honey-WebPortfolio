@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SelfPicture from "../img/self-picture.jpg";
+import SelfPicture from "../img/self-picture.png";
 import { FaCode, FaServer, FaUsers, FaLightbulb } from "react-icons/fa";
 
 const Profile = () => {
@@ -77,6 +77,11 @@ const Profile = () => {
         0% { background-position: -100% 0; }
         100% { background-position: 200% 0; }
       }
+      
+      .text-keep-all {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
     `;
     document.head.appendChild(styleElement);
 
@@ -103,7 +108,7 @@ const Profile = () => {
                 <div className="p-2 xs:p-3 bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-600 rounded-xl shadow-[0_0_30px_rgba(56,189,248,0.3)]">
                   <img
                     src={SelfPicture}
-                    alt="프로필"
+                    alt="프로필 사진"
                     className="w-full h-full object-cover rounded-lg shadow-lg"
                   />
                 </div>
@@ -135,8 +140,8 @@ const Profile = () => {
                 <FaCode className="w-5 h-5 text-white" />
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-base sm:text-lg leading-relaxed">
-                  저는 <span className="text-cyan-300 font-semibold">Java & Spring & React</span>를 좋아하는 개발자입니다. 복잡한 문제를 해결하고 사용자가 즐겁게 사용할 수 있는 웹 서비스를 개발하고 구축하는 것에 큰 보람과 자부심을 느낍니다.
+                <p className="text-base sm:text-lg leading-relaxed text-keep-all">
+                  저는 개발이 즐겁고 배움에 열정적인 <span className="text-cyan-300 font-semibold">신입 웹 개발자</span>입니다. 코딩을 하면서 새로운 기능을 개발하고 어려운 문제를 해결해 나가는 과정이 정말 재미있습니다.
                 </p>
               </div>
             </div>
@@ -146,8 +151,8 @@ const Profile = () => {
                 <FaServer className="w-5 h-5 text-white" />
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-base sm:text-lg leading-relaxed">
-                  <span className="text-indigo-300 font-semibold">Tailwind CSS</span>를 이용해 깔끔하고 현대적인 UI를 구현하는 것을 좋아하며, <span className="text-indigo-300 font-semibold">백엔드(Spring, JPA)</span>에도 꾸준히 관심을 가지고 있어 프론트와 백엔드를 균형 있게 다룰 수 있는 개발자로 성장하고자 합니다.
+                <p className="text-base sm:text-lg leading-relaxed text-keep-all">
+                  <span className="text-indigo-300 font-semibold">React</span>와 <span className="text-indigo-300 font-semibold">Tailwind CSS</span>를 활용한 웹 개발에 흥미를 느끼고 있으며, 백엔드 기술인 <span className="text-indigo-300 font-semibold">Java</span>와 <span className="text-indigo-300 font-semibold">Spring</span>도 함께 공부하고 있습니다.
                 </p>
               </div>
             </div>
@@ -157,8 +162,8 @@ const Profile = () => {
                 <FaUsers className="w-5 h-5 text-white" />
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-base sm:text-lg leading-relaxed">
-                  더조은컴퓨터아카데미에서 <span className="text-blue-300 font-semibold">풀스택 과정(Java, Flutter, AWS)</span>을 수료했습니다. 팀 프로젝트에서 함께 문제를 해결하며 성장하는 과정이 특히 값진 경험이었습니다.
+                <p className="text-base sm:text-lg leading-relaxed text-keep-all">
+                  최근 더조은컴퓨터아카데미에서 <span className="text-blue-300 font-semibold">풀스택 과정</span>을 수료했습니다. 학원에서 진행한 팀 프로젝트는 제게 큰 자신감을 주었고, 실제 개발 환경에서 어떻게 협업하는지 배울 수 있었습니다.
                 </p>
               </div>
             </div>
@@ -168,8 +173,8 @@ const Profile = () => {
                 <FaLightbulb className="w-5 h-5 text-white" />
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-base sm:text-lg leading-relaxed">
-                  저는 <span className="text-purple-300 font-semibold">함께 일하는 즐거움</span>을 중요하게 생각합니다. 새로운 지식을 배우고 공유하며, 팀원들과 함께 성장할 수 있는 환경에서 일하고 싶습니다.
+                <p className="text-base sm:text-lg leading-relaxed text-keep-all">
+                  꾸준히 <span className="text-purple-300 font-semibold">개발 공부</span>하며 첫 직장에서 많은 것을 배우고 싶습니다. 아직 모르는 부분이 많지만 긍정적인 마음가짐으로 도전하고, 동료들과 함께 성장하는 개발자가 되고 싶습니다.
                 </p>
               </div>
             </div>
@@ -177,7 +182,6 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* 장식 요소 - 모바일에서는 일부만 표시 */}
       <div className="absolute left-8 top-16 w-2 h-2 bg-blue-500 rounded-full animate-ping opacity-70"></div>
       <div className="absolute left-1/3 bottom-12 w-3 h-3 bg-purple-500 rounded-full animate-ping opacity-70 hidden sm:block" style={{ animationDelay: '0.5s' }}></div>
       <div className="absolute right-1/4 top-1/3 w-2 h-2 bg-cyan-500 rounded-full animate-ping opacity-70 hidden sm:block" style={{ animationDelay: '1s' }}></div>
