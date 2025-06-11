@@ -583,15 +583,15 @@ const Projects = () => {
                   자세히보기
                 </button>
                 {proj.name !== "웹 포트폴리오" && !isMobile && (
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                     className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
-                  >
-                    링크이동
-                  </a>
+                >
+                  링크이동
+                </a>
                 )}
               </div>
 

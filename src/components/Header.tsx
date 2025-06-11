@@ -64,7 +64,7 @@ const Header = () => {
 
           {/* 데스크탑 메뉴 */}
           <ul className="hidden lg:flex space-x-6">
-            {menuItems.map((item) => (
+          {menuItems.map((item) => (
               <li key={item.name} className="relative">
                 <a
                   href={item.href}
@@ -73,15 +73,15 @@ const Header = () => {
                     : 'text-gray-300 hover:bg-gray-800/50'
                     }`}
                 >
-                  {item.name}
+                {item.name}
                   {activeItem === item.name && (
                     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full"></span>
                   )}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
         {/* 모바일 메뉴 */}
         <div

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BsLightningChargeFill, BsCompass, BsBriefcaseFill, BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { BsLightningChargeFill, BsCompass, BsBriefcaseFill } from "react-icons/bs";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 interface CardProps {
   icon: React.ReactNode;
@@ -62,13 +63,13 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
                   >
                     {expanded ? (
                       <>
-                        <span className="hidden xs:inline">접기</span>
-                        <BsChevronLeft className="ml-0 xs:ml-1.5" />
+                        <span className="hidden xs:inline font-semibold">접기</span>
+                        <FaChevronLeft className="ml-0 xs:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                       </>
                     ) : (
                       <>
-                        <span className="hidden xs:inline">펼치기</span>
-                        <BsChevronRight className="ml-0 xs:ml-1.5" />
+                        <span className="hidden xs:inline font-semibold">펼치기</span>
+                        <FaChevronRight className="ml-0 xs:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                       </>
                     )}
                   </button>
@@ -93,7 +94,6 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
             <div className="md:w-[65%] overflow-hidden transform origin-left animate-expandRight">
               <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
               <div className="p-5 sm:p-8 text-white">
-                <h5 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 animate-slideDown opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>주요 내용</h5>
                 <ul className="space-y-3 sm:space-y-5 list-none pl-0">
                   {bullets.map((point: string, idx: number) => (
                     <li key={idx} className="flex items-start mb-3 sm:mb-4 animate-slideDown opacity-0" style={{ animationDelay: `${0.3 + idx * 0.1}s`, animationFillMode: 'forwards' }}>
