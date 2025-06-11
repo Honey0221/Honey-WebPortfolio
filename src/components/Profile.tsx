@@ -174,7 +174,7 @@ const Profile = () => {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-base sm:text-lg leading-relaxed text-keep-all">
-                  꾸준히 <span className="text-purple-300 font-semibold">개발 공부</span>하며 첫 직장에서 많은 것을 배우고 싶습니다. 아직 모르는 부분이 많지만 긍정적인 마음가짐으로 도전하고, 동료들과 함께 성장하는 개발자가 되고 싶습니다.
+                  꾸준히 <span className="text-purple-300 font-semibold">개발 공부</span>하며 첫 직장에서 많은 것을 배우고 싶습니다. <br />아직 모르는 부분이 많지만 긍정적인 마음가짐으로 도전하고, 동료들과 함께 성장하는 개발자가 되고 싶습니다.
                 </p>
               </div>
             </div>
