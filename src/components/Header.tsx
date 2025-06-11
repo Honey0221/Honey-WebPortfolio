@@ -50,7 +50,7 @@ const Header = () => {
       <div className="max-w-6xl mx-auto px-4">
         <nav className="h-16 md:h-20 flex justify-between items-center">
           <div className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
-            HONEY'S PORTFOLIO
+            JI HEON PORTFOLIO
           </div>
 
           {/* 모바일 메뉴 토글 버튼 */}

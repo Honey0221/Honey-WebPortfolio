@@ -19,6 +19,7 @@ import {
   SiFlutter,
   SiAndroidstudio,
   SiVisualstudiocode,
+  SiDart,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
 
@@ -44,6 +45,7 @@ const backendSkills: Skill[] = [
   { name: "Oracle", icon: <SiOracle size={40} /> },
   { name: "MySQL", icon: <SiMysql size={40} /> },
   { name: "MyBatis", icon: <FaTools size={40} /> },
+  { name: "Dart", icon: <SiDart size={40} /> },
 ];
 
 const tools: Skill[] = [

@@ -46,9 +46,9 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
     <div className={`w-full max-w-[1000px] transition-all duration-700 ease-in-out mb-6 sm:mb-10 hover:scale-[1.01] transform`}>
       <div className="relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300">
         {/* 통합 카드 컨테이너 */}
-        <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''}`}>
+        <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''} max-h-[200px]`}>
           {/* 메인 카드 */}
-          <div className={`transition-all duration-500 ease-out z-10 ${expanded ? 'md:w-[35%]' : 'w-full'}`}>
+          <div className={`transition-all duration-500 ease-out z-10 ${expanded ? 'md:w-[40%]' : 'w-full'}`}>
             <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
             <div className="p-5 sm:p-8 text-white">
               <div className="flex items-center">
@@ -84,20 +84,20 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
 
           {/* 구분선 */}
           {expanded && (
-            <div className="hidden md:block w-[2px] bg-gray-700 self-stretch mx-0.5">
+            <div className="hidden md:block w-[2px] bg-gray-700 self-stretch mx-2">
               <div className={`h-full w-full ${getColorClass('bg')} opacity-20`}></div>
             </div>
           )}
 
           {/* 확장된 내용 */}
           {expanded && (
-            <div className="md:w-[65%] overflow-hidden transform origin-left animate-expandRight">
-              <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
+            <div className="md:w-[60%] overflow-y-auto max-h-[500px] transform origin-left animate-expandRight">
+              <div className={`h-1.5 sm:h-2 ${getColorClass('bg')} sticky top-0 z-10`}></div>
               <div className="p-5 sm:p-8 text-white">
                 <ul className="space-y-3 sm:space-y-5 list-none pl-0">
                   {bullets.map((point: string, idx: number) => (
                     <li key={idx} className="flex items-start mb-3 sm:mb-4 animate-slideDown opacity-0" style={{ animationDelay: `${0.3 + idx * 0.1}s`, animationFillMode: 'forwards' }}>
-                      <div className={`p-1.5 sm:p-2 ${getColorClass('bg')} rounded-full mr-3 sm:mr-4 mt-0.5 shadow-[0_0_10px_rgba(0,0,0,0.15)]`}>
+                      <div className={`p-1.5 sm:p-2 ${getColorClass('bg')} rounded-full mr-3 sm:mr-4 mt-0.5 shadow-[0_0_10px_rgba(0,0,0,0.15)] flex-shrink-0`}>
                         <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white rounded-full"></div>
                       </div>
                       <span className="text-sm sm:text-base">{point}</span>
@@ -244,6 +244,25 @@ const animationStyles = `
   }
   .animate-expandRight {
     animation: expandRight 0.5s cubic-bezier(0.26, 0.86, 0.44, 0.985) forwards;
+  }
+  
+  /* 스크롤바 스타일링 */
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: rgba(31, 41, 55, 0.5);
+    border-radius: 10px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(107, 114, 128, 0.5);
+    border-radius: 10px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
   }
 `;
 
