@@ -182,10 +182,14 @@ const Profile = () => {
         </div>
       </div>
 
+      {/* 장식 효과 */}
       <div className="absolute left-8 top-16 w-2 h-2 bg-blue-500 rounded-full animate-ping opacity-70"></div>
       <div className="absolute left-1/3 bottom-12 w-3 h-3 bg-purple-500 rounded-full animate-ping opacity-70 hidden sm:block" style={{ animationDelay: '0.5s' }}></div>
       <div className="absolute right-1/4 top-1/3 w-2 h-2 bg-cyan-500 rounded-full animate-ping opacity-70 hidden sm:block" style={{ animationDelay: '1s' }}></div>
       <div className="absolute right-20 bottom-1/4 w-3 h-3 bg-indigo-500 rounded-full animate-ping opacity-70" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute left-[5%] bottom-1/3 w-4 h-4 bg-teal-500 rounded-full animate-ping opacity-50 hidden sm:block" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute right-[30%] top-20 w-2 h-2 bg-rose-500 rounded-full animate-ping opacity-60 hidden sm:block" style={{ animationDelay: '0.7s' }}></div>
+      <div className="absolute left-[40%] top-1/4 w-2 h-2 bg-amber-500 rounded-full animate-ping opacity-50 hidden sm:block" style={{ animationDelay: '1.2s' }}></div>
     </div>
   );
 };
