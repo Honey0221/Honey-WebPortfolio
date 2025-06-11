@@ -46,7 +46,7 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
     <div className={`w-full max-w-[1000px] transition-all duration-700 ease-in-out mb-6 sm:mb-10 hover:scale-[1.01] transform`}>
       <div className="relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300">
         {/* 통합 카드 컨테이너 */}
-        <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''} max-h-[200px]`}>
+        <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''} ${expanded ? 'max-h-none' : 'max-h-[200px]'}`}>
           {/* 메인 카드 */}
           <div className={`transition-all duration-500 ease-out z-10 ${expanded ? 'md:w-[40%]' : 'w-full'}`}>
             <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
@@ -91,7 +91,7 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
 
           {/* 확장된 내용 */}
           {expanded && (
-            <div className="md:w-[60%] overflow-y-auto max-h-[500px] transform origin-left animate-expandRight">
+            <div className="md:w-[60%] overflow-y-auto md:max-h-[500px] max-h-[300px] transform origin-left animate-expandRight">
               <div className={`h-1.5 sm:h-2 ${getColorClass('bg')} sticky top-0 z-10`}></div>
               <div className="p-5 sm:p-8 text-white">
                 <ul className="space-y-3 sm:space-y-5 list-none pl-0">

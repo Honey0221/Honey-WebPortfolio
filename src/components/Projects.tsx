@@ -540,7 +540,7 @@ const Projects = () => {
     <>
       <div className="max-w-6xl mx-auto px-4 py-8">
         <h2 className="text-4xl font-bold text-center mb-12">PROJECTS</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
           {projectList.map((proj, idx) => (
             <div
               key={proj.name}
@@ -583,15 +583,15 @@ const Projects = () => {
                   자세히보기
                 </button>
                 {proj.name !== "웹 포트폴리오" && !isMobile && (
-                <a
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
-                >
-                  링크이동
-                </a>
+                  >
+                    링크이동
+                  </a>
                 )}
               </div>
 
