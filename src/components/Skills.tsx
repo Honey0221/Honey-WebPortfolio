@@ -18,6 +18,7 @@ import {
   SiEclipseide,
   SiFlutter,
   SiAndroidstudio,
+  SiVisualstudiocode,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
 
@@ -51,6 +52,7 @@ const tools: Skill[] = [
   { name: "AWS", icon: <SiAmazonaws size={40} /> },
   { name: "Vite", icon: <SiVite size={40} /> },
   { name: "IntelliJ", icon: <SiIntellijidea size={40} /> },
+  { name: "VSCode", icon: <SiVisualstudiocode size={40} /> },
   { name: "Eclipse", icon: <SiEclipseide size={40} /> },
   { name: "Android Studio", icon: <SiAndroidstudio size={40} /> },
 ];
