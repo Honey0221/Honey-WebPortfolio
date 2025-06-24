@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineMail, AiOutlineArrowUp, AiFillGithub } from "react-icons/ai";
-import { SiKakaotalk } from "react-icons/si";
+import { RiKakaoTalkFill } from "react-icons/ri";
 
 const FloatingIcons = () => {
   const [tooltip, setTooltip] = useState(false);
@@ -60,8 +60,8 @@ const FloatingIcons = () => {
         className="bg-gradient-to-r from-yellow-400 to-yellow-500 p-2.5 sm:p-3.5 rounded-full shadow-lg hover:shadow-lg hover:shadow-yellow-400/30 transition duration-300 transform hover:scale-110"
         aria-label="카카오톡 채팅"
       >
-        <SiKakaotalk size={22} className="text-white sm:hidden" />
-        <SiKakaotalk size={26} className="text-white hidden sm:block" />
+        <RiKakaoTalkFill size={22} className="text-white sm:hidden" />
+        <RiKakaoTalkFill size={26} className="text-white hidden sm:block" />
       </a>
 
       <button

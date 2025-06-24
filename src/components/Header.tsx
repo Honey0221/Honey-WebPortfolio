@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 ${scrolled || mobileMenuOpen ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+    <header className={`font-SUIT-Bold fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 ${scrolled || mobileMenuOpen ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4">
         <nav className="h-16 md:h-20 flex justify-between items-center">
           <div className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
