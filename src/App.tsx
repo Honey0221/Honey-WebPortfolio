@@ -24,31 +24,6 @@ function App() {
     };
   }, []);
 
-  // 모바일에서 스크롤 처리를 위한 터치 이벤트 핸들러
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      const container = document.getElementById('scroll-container');
-      if (container) {
-        container.style.scrollSnapType = 'none';
-      }
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const container = document.getElementById('scroll-container');
-      if (container) {
-        container.style.scrollSnapType = 'y mandatory';
-      }
-    };
-
-    document.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchend', handleTouchEnd);
-
-    return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
-
   // 애니메이션 및 글로벌 스타일 추가
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -117,13 +92,13 @@ function App() {
   return (
     <div
       id="scroll-container"
-      className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth select-none scrollbar-hide"
+      className="h-screen overflow-y-scroll scroll-smooth select-none scrollbar-hide"
       style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
     >
       <Header />
       <section
         id="profile"
-        className="snap-start min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-blue-900/20 to-indigo-900/30 relative overflow-hidden py-20 sm:py-10 md:py-0"
+        className="min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-blue-900/20 to-indigo-900/30 relative overflow-hidden py-20 sm:py-10 md:py-0"
       >
         <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
           <div className="absolute top-20 left-[10%] w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -139,7 +114,7 @@ function App() {
       </section>
       <section
         id="intro"
-        className="snap-start min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-800 relative overflow-hidden py-20 sm:py-10 md:py-0"
+        className="min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-800 relative overflow-hidden py-20 sm:py-10 md:py-0"
       >
         <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
           <div className="absolute top-20 right-[15%] w-48 sm:w-72 h-48 sm:h-72 bg-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -155,7 +130,7 @@ function App() {
       </section>
       <section
         id="career"
-        className="snap-start min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-indigo-900/20 to-blue-900/20 relative overflow-hidden py-20 sm:py-10 md:py-0"
+        className="min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-indigo-900/20 to-blue-900/20 relative overflow-hidden py-20 sm:py-10 md:py-0"
       >
         <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
           <div className="absolute top-10 left-[20%] w-60 sm:w-80 h-60 sm:h-80 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -170,7 +145,7 @@ function App() {
       </section>
       <section
         id="skills"
-        className="snap-start min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-indigo-950 via-blue-950 to-cyan-950/70 relative overflow-hidden py-20 sm:py-10 md:py-0"
+        className="min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-indigo-950 via-blue-950 to-cyan-950/70 relative overflow-hidden py-20 sm:py-10 md:py-0"
       >
         <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
           <div className="absolute top-10 right-[15%] w-56 sm:w-72 h-56 sm:h-72 bg-cyan-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -185,15 +160,8 @@ function App() {
       </section>
       <section
         id="projects"
-        className="snap-start min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden py-20 sm:py-10 md:py-0"
+        className="min-h-screen flex items-center justify-center animate-gradient bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden py-20 sm:py-10 md:py-0"
       >
-        <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
-          <div className="absolute top-20 left-[20%] w-56 sm:w-72 h-56 sm:h-72 bg-gray-600/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-40 right-[15%] w-64 sm:w-80 h-64 sm:h-80 bg-gray-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <svg className="absolute bottom-0 left-0 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="rgba(75, 85, 99, 0.05)" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,202.7C672,192,768,160,864,165.3C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-          </svg>
-        </div>
         <div className="section-content z-10 w-full">
           <Projects />
         </div>

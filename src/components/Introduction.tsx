@@ -48,7 +48,8 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
         {/* 통합 카드 컨테이너 */}
         <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-xl transition-all duration-500 ease-out bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 backdrop-blur-sm ${expanded ? 'md:w-[1000px]' : ''} ${expanded ? 'max-h-none' : 'max-h-[200px]'}`}>
           {/* 메인 카드 */}
-          <div className={`transition-all duration-500 ease-out z-10 ${expanded ? 'md:w-[40%]' : 'w-full'}`}>
+          <div className={`transition-all cursor-pointer duration-500 ease-out z-10 ${expanded ? 'md:w-[40%]' : 'w-full'}`}
+            onClick={() => setExpanded(!expanded)}>
             <div className={`h-1.5 sm:h-2 ${getColorClass('bg')}`}></div>
             <div className="p-5 sm:p-8 text-white">
               <div className="flex items-center">
@@ -58,17 +59,14 @@ const ExpandableCard: React.FC<CardProps> = ({ icon, title, summary, bullets, co
                 <h5 className="text-xl sm:text-2xl font-bold">{title}</h5>
                 {bullets.length > 0 && (
                   <button
-                    onClick={() => setExpanded(!expanded)}
                     className={`ml-auto flex items-center text-xs sm:text-sm font-medium ${getColorClass('text')} focus:outline-none transition-all duration-300 hover:scale-110 hover:opacity-80`}
                   >
                     {expanded ? (
                       <>
-                        <span className="hidden xs:inline font-semibold">접기</span>
                         <FaChevronLeft className="ml-0 xs:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                       </>
                     ) : (
                       <>
-                        <span className="hidden xs:inline font-semibold">펼치기</span>
                         <FaChevronRight className="ml-0 xs:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                       </>
                     )}
@@ -118,33 +116,33 @@ const Introduction = () => {
     {
       icon: <BsLightningChargeFill className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "문제 해결 능력",
-      summary: "논리적 사고를 바탕으로 다양한 문제 상황에 효과적으로 대응합니다.",
+      summary: "분석력을 바탕으로 개발 과정에서 발생하는 다양한 문제를 정확히 파악하고 효과적으로 대응합니다.",
       bullets: [
-        "팀원 간 의견 충돌 시 경청과 합의점 도출 능력 보유",
-        "개발 중 발생한 오류를 빠르게 디버깅하는 분석력",
-        "협업의 중요성과 다각적 접근법을 통한 문제 해결"
+        "팀원 간 의견 차이를 조율하고 합리적인 해결 방안을 제시",
+        "개발 중 발생한 오류를 분석하고 학습하며 신속하게 디버깅",
+        "협업 경험을 통해 다각도로 문제를 접근하고 해결"
       ],
       color: "purple"
     },
     {
       icon: <BsCompass className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "진로 결정 계기",
-      summary: "IT 기술을 통해 실질적인 가치를 창출하고 사회에 기여하고자 개발자 진로를 선택했습니다.",
+      summary: "IT 기술을 통해 실질적인 가치를 전달하고 의미 있는 개발자가 되고자 합니다.",
       bullets: [
-        "소방공무원에서 IT 분야로 적성에 맞는 진로 전환",
-        "기술을 통한 가치 창출과 사회 기여에 동기 부여",
-        "지속적인 성장과 학습을 추구하는 개발자로 발전"
+        "병원 아르바이트 경험을 통해 개발자의 길을 결심",
+        "KDT 교육과 프로젝트로 기술과 실무 경험 습득",
+        "AI 시대에 맞춰 새로운 기술을 지속적으로 학습"
       ],
       color: "pink"
     },
     {
       icon: <BsBriefcaseFill className="w-5 h-5 sm:w-7 sm:h-7 text-white" />,
       title: "회사에서의 기여",
-      summary: "문제 해결 능력과 협업을 통해 시스템 품질과 팀 시너지를 동시에 향상시킵니다.",
+      summary: "학습과 경험을 바탕으로 문제를 파악하고 팀과 함께 성장하며 시스템 품질 향상에 기여합니다.",
       bullets: [
-        "잠재적 문제를 사전 예방하고 발생한 문제는 신속하게 해결",
-        "팀원 간 의견 차이를 조율하며 합리적인 방향 제시",
-        "기술적 문제에 대한 깊이 있는 분석과 실용적 해결책 도출"
+        "개발 과정에서 발견한 문제를 빠르게 학습하고 개선 방안을 제시",
+        "팀 프로젝트 경험을 바탕으로 원활한 협업과 의견 조율 지원",
+        "코드 리뷰와 기술 학습을 통해 실용적인 해결책을 도출"
       ],
       color: "red"
     }
@@ -244,25 +242,6 @@ const animationStyles = `
   }
   .animate-expandRight {
     animation: expandRight 0.5s cubic-bezier(0.26, 0.86, 0.44, 0.985) forwards;
-  }
-  
-  /* 스크롤바 스타일링 */
-  .overflow-y-auto::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .overflow-y-auto::-webkit-scrollbar-track {
-    background: rgba(31, 41, 55, 0.5);
-    border-radius: 10px;
-  }
-  
-  .overflow-y-auto::-webkit-scrollbar-thumb {
-    background: rgba(107, 114, 128, 0.5);
-    border-radius: 10px;
-  }
-  
-  .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    background: rgba(156, 163, 175, 0.5);
   }
 `;
 

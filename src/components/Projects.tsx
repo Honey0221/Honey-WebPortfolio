@@ -101,15 +101,15 @@ const projectList: Project[] = [
     ],
     retrospective: {
       good:
-        "개발 전 데이터 모델링과 페이지 구성을 미리 정리하여 원활하게 개발을 진행할 수 있었습니다.",
+        "개발 전 데이터 모델링과 페이지 구성을 미리 정리하여 원활한 개발 진행",
       bad:
-        "고객 등급에 따른 옵션 선택 기능을 추가하고 싶었으나, 시간 부족으로 구현하지 못했습니다.",
+        "고객 등급에 따른 옵션 선택 기능 추가 시간 부족으로 미구현",
       improve:
-        "주어진 시간 내에 세부적인 개발 일정 계획을 세워 효율적으로 작업을 진행해야 합니다.",
+        "주어진 시간 내 세부적인 개발 일정 계획 수립을 통한 효율적 작업 진행 필요",
       bugfix:
-        "중복 예약이 가능한 문제를 로그를 추가하여 디버깅하고, 동일 객실 번호의 예약 기간이 겹치지 않도록 로직 수정하여 해결했습니다.",
+        "중복 예약 가능 문제 로그 추가 디버깅 및 동일 객실 번호 예약 기간 겹침 방지 로직 수정을 통한 해결",
       lesson:
-        "자바와 부트스트랩에 대한 이해도가 향상되었고, 기획부터 개발까지 혼자 수행하며 문제 해결 능력이 많이 발전했습니다.",
+        "자바와 부트스트랩에 대한 이해도 향상, 기획부터 개발까지 단독 수행을 통한 문제 해결 능력 발전",
     },
     link: "https://www.canva.com/design/DAGh8bPtQp8/SHcUTKq_L6OpoUokG-a4ew/view",
     techIcons: [
@@ -165,15 +165,15 @@ const projectList: Project[] = [
     ],
     retrospective: {
       good:
-        "복잡한 기능(클린봇, 추천 시스템)을 성공적으로 개발하여 만족도가 높았습니다.",
+        "복잡한 기능(클린봇, 추천 시스템) 성공적 개발을 통한 높은 만족도 달성",
       bad:
-        "UI/UX 디자인 완성도가 부족해 사용자 경험이 조금 아쉽게 느껴졌습니다.",
+        "UI/UX 디자인 완성도 부족으로 인한 사용자 경험 아쉬움",
       improve:
-        "기능 개발과 시각적 완성도를 동시에 고려하는 워크플로우를 마련해야 합니다.",
+        "기능 개발과 시각적 완성도를 동시 고려하는 워크플로우 마련 필요",
       bugfix:
-        "스크립트 중복 바인딩 오류를 이벤트 리스너 로직 검토 및 상태 변수 활용으로 해결했습니다.",
+        "스크립트 중복 바인딩 오류 이벤트 리스너 로직 검토 및 상태 변수 활용을 통한 해결",
       lesson:
-        "팀원 간 소통의 중요성을 깨달았고, 테스트 코드 작성의 필요성을 다시금 인지했습니다.",
+        "팀원 간 소통의 중요성 인식, 테스트 코드 작성 필요성 재인지",
     },
     link: "https://www.canva.com/design/DAGhgFhA4R4/lDFugDHqd5-S7GrQ4pOY_A/view",
     techIcons: [
@@ -251,15 +251,15 @@ const projectList: Project[] = [
     ],
     retrospective: {
       good:
-        "공통 모듈 분리로 가독성을 높이는 리팩토링을 진행했고, MyBatis를 효율적으로 활용했습니다.",
+        "공통 모듈 분리를 통한 가독성 향상 리팩토링 진행, MyBatis 효율적 활용",
       bad:
-        "WebSocket 관련 기능 구현 난이도가 높아 일정이 지연된 부분이 있었습니다.",
+        "WebSocket 관련 기능 구현 난이도로 인한 일정 지연 발생",
       improve:
-        "WebSocket 로직 흐름을 더 명확히 학습해 유사한 문제 발생을 줄여야 합니다.",
+        "WebSocket 로직 흐름 명확 학습을 통한 유사 문제 발생 감소 필요",
       bugfix:
-        "트랜잭션별 try-catch를 추가해 안정성을 강화하고, 에러 발생 시 상세 로그를 남겨 디버깅 시간을 단축했습니다.",
+        "트랜잭션별 try-catch 추가를 통한 안정성 강화, 에러 발생 시 상세 로그 기록을 통한 디버깅 시간 단축",
       lesson:
-        "오셀로 게임 로직을 깊이 이해하며 WebSocket 기반 실시간 처리의 중요성을 깨달았습니다.",
+        "오셀로 게임 로직 심화 이해, WebSocket 기반 실시간 처리의 중요성 인식",
     },
     link: "https://www.canva.com/design/DAGg2IUk3nw/7tEwjDkB86q2If2hSnVAMg/view",
     techIcons: [
@@ -334,8 +334,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-30">
-      <div className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]"
+    >
+      <div 
+        className="bg-gray-800 text-white w-11/12 md:w-3/4 lg:w-1/2 h-[90vh] flex flex-col rounded-lg relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* 헤더 영역 */}
         <div className="px-8 py-4 flex-shrink-0 bg-gradient-to-r from-gray-900 to-gray-700">
           <button
@@ -538,68 +543,81 @@ const Projects = () => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-4xl font-bold text-center mb-12">PROJECTS</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
-          {projectList.map((proj, idx) => (
-            <div
-              key={proj.name}
-              className="relative bg-[#5555] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition w-[300px] h-[400px]"
-              onClick={() => isMobile && openModal(idx)}
-            >
-              <div className="flex flex-col justify-center h-full">
-                <div className="h-[256px] w-full">
-                  <img
-                    src={proj.image}
-                    alt={proj.name}
-                    className="w-full h-full object-cover"
-                  />
+      <div className="relative py-16 sm:py-20 md:py-24 z-10 w-full px-4">
+        <div className="max-w-[1280px] mx-auto relative z-10">
+          <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600">PROJECTS</h2>
+            <div className="h-1 sm:h-1.5 w-32 sm:w-44 md:w-56 mx-auto bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 mt-2 sm:mt-3 rounded-full"></div>
+            <p className="text-gray-300 mt-4 sm:mt-6 md:mt-8 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed px-2">지금까지 진행한 프로젝트들을 소개합니다</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+            {projectList.map((proj, idx) => (
+              <div
+                key={proj.name}
+                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700/30 hover:border-gray-500/50 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-gray-500/20 transition-all duration-300 hover:scale-105 w-[300px] h-[400px]"
+                onClick={() => isMobile && openModal(idx)}
+              >
+                <div className="flex flex-col justify-center h-full">
+                  <div className="h-[256px] w-full">
+                    <img
+                      src={proj.image}
+                      alt={proj.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="h-20 flex items-center justify-center bg-gradient-to-br from-gray-800/80 to-gray-900/80">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">{proj.name}</h3>
+                  </div>
+
+                  <div className="p-4 flex flex-wrap justify-center gap-3 bg-gradient-to-br from-gray-800/80 to-gray-900/80">
+                    {proj.techIcons.map((iconElem, i) => (
+                      <div
+                        key={i}
+                        className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
+                      >
+                        {iconElem}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="h-20 flex items-center justify-center bg-[#5555]">
-                  <h3 className="text-2xl font-bold text-white">{proj.name}</h3>
-                </div>
-
-                <div className="p-4 flex flex-wrap justify-center gap-3 bg-[#5555]">
-                  {proj.techIcons.map((iconElem, i) => (
-                    <div
-                      key={i}
-                      className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
-                    >
-                      {iconElem}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute inset-0 bg-[#5555] flex items-center justify-center opacity-0 hover:opacity-100 transition">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openModal(idx);
-                  }}
-                  className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold mr-4"
-                >
-                  자세히보기
-                </button>
-                {proj.name !== "웹 포트폴리오" && !isMobile && (
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="px-4 py-2 border-[2px] border-white rounded text-white hover:bg-white hover:text-[#000] hover:font-semibold"
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openModal(idx);
+                    }}
+                    className="px-6 py-3 border-2 border-white rounded-lg text-white hover:bg-white hover:text-black hover:font-semibold mr-4 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
-                    링크이동
-                  </a>
-                )}
-              </div>
+                    자세히보기
+                  </button>
+                  {proj.name !== "웹 포트폴리오" && !isMobile && (
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-6 py-3 border-2 border-white rounded-lg text-white hover:bg-white hover:text-black hover:font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                    >
+                      링크이동
+                    </a>
+                  )}
+                </div>
 
-              {open && selected === idx && (
-                <ProjectModal project={proj} onClose={closeModal} />
-              )}
-            </div>
+              </div>
           ))}
+        </div>
+        
+        {/* 모달을 프로젝트 리스트 외부로 이동 */}
+        {open && selected !== null && (
+          <ProjectModal project={projectList[selected]} onClose={closeModal} />
+        )}
+
+        {/* 배경 효과들 */}
+        <div className="absolute top-0 -left-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 sm:bottom-40 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
         </div>
       </div>
     </>

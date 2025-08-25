@@ -49,8 +49,15 @@ const Header = () => {
     <header className={`font-SUIT-Bold fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 ${scrolled || mobileMenuOpen ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4">
         <nav className="h-16 md:h-20 flex justify-between items-center">
-          <div className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
-            JI HEON PORTFOLIO
+          <div className="flex items-center gap-3">
+            <div className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
+              JI HEON PORTFOLIO
+            </div>
+            <div className="relative">
+              <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white text-xs md:text-sm font-bold px-2 py-1 rounded-full shadow-lg">
+                Beta
+              </div>
+            </div>
           </div>
 
           {/* 모바일 메뉴 토글 버튼 */}

@@ -141,7 +141,7 @@ const Profile = () => {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-base sm:text-lg leading-relaxed text-keep-all">
-                  저는 개발이 즐겁고 배움에 열정적인 <span className="text-cyan-300 font-semibold">신입 웹 개발자</span>입니다. 코딩을 하면서 새로운 기능을 개발하고 어려운 문제를 해결해 나가는 과정이 정말 재미있습니다.
+                  저는 웹 개발을 통해 사람들의 불편을 줄이고 <span className="text-cyan-300 font-semibold">가치를 전달하고자 하는 신입 개발자</span>입니다. 문제 해결 과정에서 끈기 있게 도전하며, 협업 속에서 소통을 중시하는 태도를 가지고 있습니다.
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ const Profile = () => {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-base sm:text-lg leading-relaxed text-keep-all">
-                  <span className="text-indigo-300 font-semibold">React</span>와 <span className="text-indigo-300 font-semibold">Tailwind CSS</span>를 활용한 웹 개발에 흥미를 느끼고 있으며, 백엔드 기술인 <span className="text-indigo-300 font-semibold">Java</span>와 <span className="text-indigo-300 font-semibold">Spring</span>도 함께 공부하고 있습니다.
+                  주요 기술 스택은 <span className="text-indigo-300 font-semibold">Java, Spring Boot, MySQL </span> 기반의 백엔드와 <span className="text-indigo-300 font-semibold">React, JavaScript,Tailwind CSS</span>를 활용한 프론트엔드입니다. 또한 <span className="text-indigo-300 font-semibold">Docker</span>와 <span className="text-indigo-300 font-semibold">AWS</span> 환경에서 배포 경험을 쌓았습니다.
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ const Profile = () => {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-base sm:text-lg leading-relaxed text-keep-all">
-                  최근 더조은컴퓨터아카데미에서 <span className="text-blue-300 font-semibold">풀스택 과정</span>을 수료했습니다. 학원에서 진행한 팀 프로젝트는 제게 큰 자신감을 주었고, 실제 개발 환경에서 어떻게 협업하는지 배울 수 있었습니다.
+                  팀 프로젝트에서는 <span className="text-blue-300 font-semibold">기업 여론 분석 플랫폼</span>의 PM을 맡아 전체 개발 과정을 계획하고 팀원 간의 협업을 이끌었습니다. <br />또한 <span className="text-blue-300 font-semibold">도서 쇼핑몰, 보드게임 플랫폼</span> 등 다양한 프로젝트를 통해 기획부터 구현, 배포까지 경험했습니다.
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ const Profile = () => {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-base sm:text-lg leading-relaxed text-keep-all">
-                  꾸준히 <span className="text-purple-300 font-semibold">개발 공부</span>하며 첫 직장에서 많은 것을 배우고 싶습니다. <br />아직 모르는 부분이 많지만 긍정적인 마음가짐으로 도전하고, 동료들과 함께 성장하는 개발자가 되고 싶습니다.
+                  앞으로는 실무에서 배우는 경험을 바탕으로 <span className="text-purple-300 font-semibold">AI와 웹 기술을 접목한 서비스 개발</span>에 도전하고 싶습니다. <br />이를 위해 작은 업무부터 책임감을 가지고 임하고, 새로운 기술을 배워 적용하는 과정을 즐기며 팀과 함께 성과를 만들어가는 개발자로 빠르게 성장하겠습니다.
                 </p>
               </div>
             </div>
