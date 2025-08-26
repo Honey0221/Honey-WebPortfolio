@@ -1,7 +1,6 @@
 import React, { JSX, useState, useEffect } from "react";
 import {
   AiOutlineClose,
-  AiOutlineLink,
   AiOutlineCalendar,
 } from "react-icons/ai";
 import {
@@ -11,13 +10,12 @@ import {
   SiThymeleaf,
   SiGithub,
   SiSpringboot,
-  SiSpringsecurity,
   SiVite,
   SiBootstrap,
   SiMysql,
   SiGit,
 } from "react-icons/si";
-import { FaDatabase, FaJava, FaCode, FaTools, FaAws } from "react-icons/fa";
+import { FaJava, FaCode, FaTools, FaAws, FaGithub, FaRegFileAlt } from "react-icons/fa";
 
 import HotelImg from "../img/MiniprojectMain.png";
 import BBookImg from "../img/TeamprojectMain.png";
@@ -48,6 +46,7 @@ type Project = {
     lesson: string | string[];
   };
   link: string;
+  github: string;
   techIcons: JSX.Element[];
   image: string;
 };
@@ -112,6 +111,7 @@ const projectList: Project[] = [
         "자바와 부트스트랩에 대한 이해도 향상, 기획부터 개발까지 단독 수행을 통한 문제 해결 능력 발전",
     },
     link: "https://www.canva.com/design/DAGh8bPtQp8/SHcUTKq_L6OpoUokG-a4ew/view",
+    github: "https://github.com/honey0221/HotelReservation",
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
       <SiMysql key="mysql" size={20} className="text-blue-400" />,
@@ -176,6 +176,7 @@ const projectList: Project[] = [
         "팀원 간 소통의 중요성 인식, 테스트 코드 작성 필요성 재인지",
     },
     link: "https://www.canva.com/design/DAGhgFhA4R4/lDFugDHqd5-S7GrQ4pOY_A/view",
+    github: "https://github.com/honey0221/BookShop",
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
       <SiSpringboot key="spring" size={20} className="text-green-400" />,
@@ -262,6 +263,7 @@ const projectList: Project[] = [
         "오셀로 게임 로직 심화 이해, WebSocket 기반 실시간 처리의 중요성 인식",
     },
     link: "https://www.canva.com/design/DAGg2IUk3nw/7tEwjDkB86q2If2hSnVAMg/view",
+    github: "https://github.com/honey0221/BoardGame",
     techIcons: [
       <FaJava key="java" size={20} className="text-red-500" />,
       <SiSpringboot key="spring" size={20} className="text-green-400" />,
@@ -298,6 +300,7 @@ const projectList: Project[] = [
       ],
     },
     link: "https://wlgjsrns.mycafe24.com",
+    github: "https://github.com/honey0221/Honey-WebPortfolio",
     techIcons: [
       <SiReact key="react" size={20} className="text-blue-400" />,
       <SiTypescript key="typescript" size={20} className="text-green-600" />,
@@ -316,7 +319,6 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  // 웹 포트폴리오인지 확인
   const isPortfolio = project.name === "웹 포트폴리오";
 
   // 회고가 문자열인지 배열인지 확인하는 함수
@@ -414,7 +416,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </div>
           </div>
 
-          {/* 개발 과정 영역 - 프로세스가 있을 때만 표시 */}
+          {/* 개발 과정 영역 */}
           {project.process.length > 0 && (
             <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
               <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
@@ -435,7 +437,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </div>
           )}
 
-          {/* 수행 결과물 영역 - 결과물이 있을 때만 표시 */}
+          {/* 수행 결과물 영역 */}
           {project.results.length > 0 && (
             <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
               <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
@@ -491,9 +493,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           </div>
         </div>
 
-        {/* 푸터 영역 - 웹 포트폴리오가 아닐 때만 버튼 표시 */}
+        {/* 푸터 영역 */}
         <div className="px-8 py-6 flex-shrink-0 bg-gradient-to-r from-gray-700 to-gray-900">
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-8">
             {!isPortfolio && (
               <a
                 href={project.link}
@@ -501,10 +503,21 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 flex items-center"
               >
-                <AiOutlineLink className="mr-2" />
-                프로젝트 보러가기
+                <FaRegFileAlt className="mr-2" />
+                포트폴리오
               </a>
             )}
+            {
+              <a 
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 flex items-center"
+              >
+                <FaGithub className="mr-2" />
+                깃허브
+              </a>
+            }
           </div>
         </div>
       </div>
@@ -557,8 +570,8 @@ const Projects = () => {
                 className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700/30 hover:border-gray-500/50 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-gray-500/20 transition-all duration-300 hover:scale-105 w-[300px] h-[400px]"
                 onClick={() => isMobile && openModal(idx)}
               >
-                <div className="flex flex-col justify-center h-full">
-                  <div className="h-[256px] w-full">
+                <div className="relative w-full h-full flex flex-col">
+                  <div className="flex-shrink-0 h-[200px] w-full">
                     <img
                       src={proj.image}
                       alt={proj.name}
@@ -566,49 +579,53 @@ const Projects = () => {
                     />
                   </div>
 
-                  <div className="h-20 flex items-center justify-center bg-gradient-to-br from-gray-800/80 to-gray-900/80">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">{proj.name}</h3>
+                  <div className="flex-shrink-0 h-[80px] flex items-center justify-center bg-gradient-to-br from-gray-800/80 to-gray-900/80 px-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300 text-center leading-tight">{proj.name}</h3>
                   </div>
 
-                  <div className="p-4 flex flex-wrap justify-center gap-3 bg-gradient-to-br from-gray-800/80 to-gray-900/80">
-                    {proj.techIcons.map((iconElem, i) => (
-                      <div
-                        key={i}
-                        className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
-                      >
-                        {iconElem}
-                      </div>
-                    ))}
+                  <div className="flex-1 flex items-center justify-center p-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80">
+                    <div className="flex flex-wrap justify-center gap-3">
+                      {proj.techIcons.map((iconElem, i) => (
+                        <div
+                          key={i}
+                          className="text-white bg-white flex items-center justify-center rounded-full w-8 h-8"
+                        >
+                          {iconElem}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openModal(idx);
-                    }}
-                    className="px-6 py-3 border-2 border-white rounded-lg text-white hover:bg-white hover:text-black hover:font-semibold mr-4 transition-all duration-300 hover:scale-105 shadow-lg"
-                  >
-                    자세히보기
-                  </button>
-                  {proj.name !== "웹 포트폴리오" && !isMobile && (
-                    <a
-                      href={proj.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
+                <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl">
+                  <div className="flex flex-col gap-4">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openModal(idx);
+                      }}
                       className="px-6 py-3 border-2 border-white rounded-lg text-white hover:bg-white hover:text-black hover:font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                     >
-                      링크이동
-                    </a>
-                  )}
+                      자세히보기
+                    </button>
+                    {proj.name !== "웹 포트폴리오" && !isMobile && (
+                      <a
+                        href={proj.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-6 py-3 border-2 border-white rounded-lg text-white hover:bg-white hover:text-black hover:font-semibold transition-all duration-300 hover:scale-105 shadow-lg text-center"
+                      >
+                        링크이동
+                      </a>
+                    )}
+                  </div>
                 </div>
-
               </div>
-          ))}
+            ))}
+          </div>
         </div>
-        
+
         {/* 모달을 프로젝트 리스트 외부로 이동 */}
         {open && selected !== null && (
           <ProjectModal project={projectList[selected]} onClose={closeModal} />
@@ -618,7 +635,6 @@ const Projects = () => {
         <div className="absolute top-0 -left-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
         <div className="absolute top-0 -right-4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-20 sm:bottom-40 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gray-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
-        </div>
       </div>
     </>
   );
