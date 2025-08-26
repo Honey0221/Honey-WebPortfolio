@@ -14,6 +14,12 @@ import {
   SiBootstrap,
   SiMysql,
   SiGit,
+  SiPython,
+  SiFastapi,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiDocker,
 } from "react-icons/si";
 import { FaJava, FaCode, FaTools, FaAws, FaGithub, FaRegFileAlt } from "react-icons/fa";
 
@@ -21,21 +27,19 @@ import HotelImg from "../img/MiniprojectMain.png";
 import BBookImg from "../img/TeamprojectMain.png";
 import GameImg from "../img/MyprojectMain.png";
 import PortfolioImg from "../img/WebportfolioMain.png";
+import CopsImg from "../img/CopsprojectMain.png";
 
 type Project = {
   name: string;
   period: string;
-  goals: string[];
   environment: {
     tools: string[];
     frontend: string[];
     backend: string[];
   };
-  process: {
+  goals: string[];
+  content: {
     title: string;
-    items: string[];
-  }[];
-  results: {
     items: string[];
   }[];
   retrospective: {
@@ -56,9 +60,9 @@ const projectList: Project[] = [
     name: "호텔 운영 관리 시스템",
     period: "2024.11.12. ~ 2024.11.26.",
     goals: [
-      "호텔 운영의 효율성을 높이고 관리자의 부담을 줄이기 위한 시스템을 제안",
-      "자바 라이브러리만을 사용하여 개발하였고, 주제 선정과 유저 시나리오는 브레인스토밍을 통해 진행",
-      "실제 사용자가 필요로 하는 기능들을 최대한 반영하였고, 고객과 관리자가 편리하게 사용할 수 있는 UI와 시스템을 설계",
+      "호텔 운영의 효율성을 높이고 관리자의 부담을 줄이기 위한 목표로 기획",
+      "순수 자바 라이브러리만을 사용하여 개발하였고, 주제 선정과 유저 시나리오는 브레인스토밍을 통해 진행",
+      "실제 사용자가 필요한 기능들을 반영하였고, 고객과 관리자가 편리하게 사용할 수 있는 UI와 시스템을 설계",
       "Servlet 구조를 기반으로 HTTP 요청과 응답을 처리하고, MySQL 데이터베이스와의 연동을 통해 데이터를 관리하는 방식으로 구현",
     ],
     environment: {
@@ -66,31 +70,9 @@ const projectList: Project[] = [
       frontend: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       backend: ["Java", "Tomcat 서버"],
     },
-    process: [
+    content: [
       {
-        title: "데이터 모델링 및 페이지 구성",
-        items: [
-          "프로젝트에 필요한 주요 데이터를 분석하고 구조화하여 테이블 설계",
-          "각 페이지마다 레이아웃을 간략하게 구성하고 필요한 기능 구상",
-        ],
-      },
-      {
-        title: "객실 예약 페이지 개발",
-        items: [
-          "관리자 친화적이고 시각적으로 편리한 UI/UX 설계",
-          "객실별 상태와 예약 현황을 한눈에 확인할 수 있는 형태로 구현",
-        ],
-      },
-      {
-        title: "객실 예약 관련 기능 구현",
-        items: [
-          "객실별 상태와 예약 현황 확인",
-          "객실 예약 시 유효성 검사 후 DB 업데이트",
-        ],
-      },
-    ],
-    results: [
-      {
+        title: "주요 기능",
         items: [
           "객실 상태 관리: 객실에 문제 발생 시 대응할 수 있도록 '점검중' 상태 추가",
           "객실 갤러리: Swiper 라이브러리를 활용하여 객실별 이미지 슬라이드 제공",
@@ -143,7 +125,7 @@ const projectList: Project[] = [
       ],
       backend: ["Spring Boot", "Spring Security", "Lombok", "JPA", "Tomcat 서버"],
     },
-    process: [
+    content: [
       {
         title: "담당 역할",
         items: [
@@ -151,9 +133,8 @@ const projectList: Project[] = [
           "관리자 페이지: 매출액 비교 및 주별·월별 추이 분석, 상품 관리 및 통계 자료 제공, 리뷰·신고 관리 및 클린봇 시스템",
         ],
       },
-    ],
-    results: [
       {
+        title: "주요 기능",
         items: [
           "로그인 및 상품 구매 여부 확인 후 리뷰 작성 가능",
           "클린봇 기능: OpenAI를 사용해 부정적 내용 자동 분석, 제재된 리뷰에 안내 문구 표시",
@@ -201,52 +182,18 @@ const projectList: Project[] = [
       frontend: ["HTML", "CSS", "JavaScript", "Thymeleaf", "jQuery", "Ajax"],
       backend: ["Spring Boot", "Spring Security", "Lombok", "WebSocket", "Tomcat 서버"],
     },
-    process: [
+    content: [
       {
-        title: "메인 화면 구성",
+        title: "주요 기능",
         items: [
-          "Swiper 라이브러리를 활용한 배너 배치",
-          "좌측, 중앙, 우측 세 가지 패널 레이아웃 구성",
-        ],
-      },
-      {
-        title: "로비 좌측 패널 기능",
-        items: [
-          "유저 프로필 확인",
-          "게임 매칭 및 AI 대전 시작 버튼 배치",
-          "현재 접속자 목록 표시",
-        ],
-      },
-      {
-        title: "로비 중앙 패널 기능",
-        items: [
-          "관리자 전용 공지사항 작성",
-          "유저 공략 및 자유 게시판 제공",
-        ],
-      },
-      {
-        title: "로비 우측 패널 기능",
-        items: [
-          "유저 및 관리자 간 채팅창 제공",
-          "귓속말 및 쪽지 기능 확장 가능",
-        ],
-      },
-      {
-        title: "게임 화면",
-        items: [
-          "게임 생성, 규칙, 결과 처리 로직 구현",
-          "마지막 착수, 유효한 착수 지점 표시 안내",
+          "Swiper 라이브러리를 활용한 배너 배치 및 메인 화면 구성",
+          "로비 좌측 패널: 유저 프로필 확인, 게임 매칭 및 AI 대전 시작 버튼 배치, 현재 접속자 목록 표시",
+          "로비 중앙 패널: 관리자 전용 공지사항 작성, 유저 공략 및 자유 게시판 제공",
+          "로비 우측 패널: 유저 및 관리자 간 채팅창 제공, 귓속말 및 쪽지 기능 확장 가능",
+          "게임 화면: 게임 생성, 규칙, 결과 처리 로직 구현",
+          "마지막 착수, 유효한 착수 지점 표시 안내 기능 개발",
           "제한 시간 초과 시 자동 착수 및 자동 턴 넘김 로직 구현",
-          "실시간 채팅 및 빠른 대화 버튼 제공",
-        ],
-      },
-    ],
-    results: [
-      {
-        items: [
-          "중복 코드 제거를 위한 공통 모듈 분리 및 리팩토링",
-          "XML 기반 매핑으로 MyBatis 활용, 효율적인 데이터 조회 구현",
-          "오셀로 게임 핵심 로직 구현 및 WebSocket 실시간 데이터 처리",
+          "WebSocket을 활용한 실시간 채팅 및 빠른 대화 버튼 제공",
         ],
       },
     ],
@@ -286,8 +233,7 @@ const projectList: Project[] = [
       frontend: ["React", "TypeScript", "Tailwind CSS"],
       backend: [],
     },
-    process: [],
-    results: [],
+    content: [],
     retrospective: {
       good: "",
       bad: "",
@@ -299,7 +245,7 @@ const projectList: Project[] = [
         "백엔드 개발과 달리 프론트엔드는 사용자 경험에 직접적인 영향을 주는 만큼 섬세한 표현과 반응형 설계가 필수적임을 깨달았습니다.",
       ],
     },
-    link: "https://wlgjsrns.mycafe24.com",
+    link: "",
     github: "https://github.com/honey0221/Honey-WebPortfolio",
     techIcons: [
       <SiReact key="react" size={20} className="text-blue-400" />,
@@ -310,6 +256,47 @@ const projectList: Project[] = [
     ],
     image: PortfolioImg,
   },
+  {
+    name: "기업 여론 분석 시스템",
+    period: "2025.07.09. ~ 2025.08.13.",
+    goals: [
+      "FastAPI를 활용하여 개발하였고 비동기 처리를 통해 빠른 응답 속도를 구현",
+      "다양한 온라인 데이터를 수집·분석해 사용자에게 한눈에 인사이트를 제공하는 것을 목표로 기획",
+      "Swagger UI로 API 문서를 작성하고, Notion과 Discord 등 협업 툴로 효율적인 의사소통 및 일정 관리 수행",
+      "KOELECTRA를 감정 분석에 맞게 파인튜닝하여 기업 리뷰 데이터를 기반으로 감정 분석 기능 구현",
+    ],
+    environment: {
+      tools: ["Github", "Notion", "Discord"],
+      frontend: [],
+      backend: ["Python", "Fastapi", "PostgreSQL", "Mongodb", "Redis"],
+    },
+    content: [
+      {
+        title: "주요 기능",
+        items: [
+
+        ]
+      }
+    ],
+    retrospective: {
+      good: "PM으로서 기획부터 문서 작업까지 전반적인 프로젝트 일정을 직접 계획하고 팀원들과 조율하여 프로젝트를 성공적으로 완성",
+      bad: "프로젝트를 진행하면서 팀원들의 상황을 좀 더 세심하게 챙기지 못한 부분이 아쉬움",
+      improve: "주기적인 팀원별 면담을 통해 각자의 진행 상황을 수시로 파악하고, 필요할 경우 즉각적인 피드백과 지원 제공",
+      bugfix: "분석할 때마다 DB에 없는 데이터를 크롤링하기 위해 드라이버를 새로 실행해야 하는 문제를 해결하기 위해 크롤러 객체를 최초 한 번만 생성하고 재사용함으로써 작업 속도 향상",
+      lesson: "PM 역할을 맡으면서 개발 일정 조율과 팀원 간 원활한 소통이 프로젝트 성공의 핵심임을 체감했습니다. 다음 프로젝트에서는 팀원들의 피드백을 적극적으로 수용하고, 제 의견도 명확하게 전달하여 협업을 통해 보다 완성도 높은 결과물을 만드는 것을 목표",
+    },
+    link: "https://www.canva.com/design/DAGwgroLycs/EgL9Fbr8mZBcZIRPj7MVDg/view",
+    github: "https://github.com/honey0221/Copsproject_Fastapi",
+    techIcons: [
+      <SiPython key="python" size={20} className="text-green-600" />,
+      <SiFastapi key="fastapi" size={20} className="text-green-600" />,
+      <SiPostgresql key="postgresql" size={20} className="text-blue-400" />,
+      <SiMongodb key="mongodb" size={20} className="text-green-600" />,
+      <SiRedis key="redis" size={20} className="text-red-500" />,
+      <SiGithub key="github" size={20} className="text-gray-300" />,
+    ],
+    image: CopsImg,
+  }
 ];
 
 // 프로젝트 모달 컴포넌트
@@ -369,6 +356,47 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             />
           </div>
 
+          {/* 개발 환경 영역 */}
+          <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
+            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+              개발 환경
+            </h4>
+            <div className={`grid gap-4 text-gray-700 ${
+              project.environment.frontend.length > 0 && project.environment.backend.length > 0 
+                ? 'grid-cols-1 md:grid-cols-3' 
+                : 'grid-cols-1 md:grid-cols-2'
+            }`}>
+              {project.environment.frontend.length > 0 && (
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-green-700 mb-2">프론트엔드</h5>
+                  <ul className="list-disc ml-5">
+                    {project.environment.frontend.map((fe, fid) => (
+                      <li key={fid}>{fe}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {project.environment.backend.length > 0 && (
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-purple-700 mb-2">백엔드</h5>
+                  <ul className="list-disc ml-5">
+                    {project.environment.backend.map((be, bid) => (
+                      <li key={bid}>{be}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h5 className="font-semibold text-blue-700 mb-2">개발 도구</h5>
+                <ul className="list-disc ml-5">
+                  {project.environment.tools.map((tool, tidx) => (
+                    <li key={tidx}>{tool}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* 목표 및 소개 영역 */}
           <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
             <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
@@ -381,72 +409,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </ul>
           </div>
 
-          {/* 개발 환경 영역 */}
-          <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
-            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
-              개발 환경
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-700">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h5 className="font-semibold text-blue-700 mb-2">개발 도구</h5>
-                <ul className="list-disc ml-5">
-                  {project.environment.tools.map((tool, tidx) => (
-                    <li key={tidx}>{tool}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-green-50 p-4 rounded-lg">
-                <h5 className="font-semibold text-green-700 mb-2">프론트엔드</h5>
-                <ul className="list-disc ml-5">
-                  {project.environment.frontend.map((fe, fid) => (
-                    <li key={fid}>{fe}</li>
-                  ))}
-                </ul>
-              </div>
-              {project.environment.backend.length > 0 && (
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-purple-700 mb-2">백엔드</h5>
-                  <ul className="list-disc ml-5">
-                    {project.environment.backend.map((be, bid) => (
-                      <li key={bid}>{be}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* 개발 과정 영역 */}
-          {project.process.length > 0 && (
+          {/* 프로젝트 내용 영역 */}
+          {project.content.length > 0 && (
             <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
               <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
-                개발 과정
+                프로젝트 내용
               </h4>
-              {project.process.map((step, sidx) => (
+              {project.content.map((section, sidx) => (
                 <div key={sidx} className="mb-4 bg-gray-50 p-4 rounded-lg">
                   <h5 className="text-xl font-semibold mb-2 text-gray-800">
-                    {step.title}
+                    {section.title}
                   </h5>
                   <ul className="list-disc ml-5 space-y-1 text-gray-700">
-                    {step.items.map((item, iidx) => (
-                      <li key={iidx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* 수행 결과물 영역 */}
-          {project.results.length > 0 && (
-            <div className="mb-6 bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
-                주요 기능
-              </h4>
-              {project.results.map((res, ridx) => (
-                <div key={ridx} className="mb-4">
-                  <ul className="list-disc ml-5 space-y-1 text-gray-700">
-                    {res.items.map((item, iidx) => (
+                    {section.items.map((item, iidx) => (
                       <li key={iidx}>{item}</li>
                     ))}
                   </ul>
@@ -456,41 +431,49 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           )}
 
           {/* 프로젝트 회고 영역 */}
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
-              프로젝트 회고
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.retrospective.good && (
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-green-700 mb-2">잘한 점</h5>
-                  <p className="text-gray-700">{project.retrospective.good}</p>
-                </div>
-              )}
-              {project.retrospective.bad && (
-                <div className="bg-red-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-red-700 mb-2">아쉬운 점</h5>
-                  <p className="text-gray-700">{project.retrospective.bad}</p>
-                </div>
-              )}
-              {project.retrospective.improve && (
-                <div className="bg-yellow-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-yellow-700 mb-2">개선할 점</h5>
-                  <p className="text-gray-700">{project.retrospective.improve}</p>
-                </div>
-              )}
-              {project.retrospective.bugfix && (
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-blue-700 mb-2">오류 해결</h5>
-                  <p className="text-gray-700">{project.retrospective.bugfix}</p>
-                </div>
-              )}
-              <div className="md:col-span-2 bg-indigo-50 p-4 rounded-lg">
-                <h5 className="font-semibold text-indigo-700 mb-2">느낀 점</h5>
-                {renderLesson()}
+          {(project.retrospective.good || 
+            project.retrospective.bad || 
+            project.retrospective.improve || 
+            project.retrospective.bugfix || 
+            project.retrospective.lesson) && (
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h4 className="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">
+                프로젝트 회고
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.retrospective.good && (
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h5 className="font-semibold text-green-700 mb-2">잘한 점</h5>
+                    <p className="text-gray-700">{project.retrospective.good}</p>
+                  </div>
+                )}
+                {project.retrospective.bad && (
+                  <div className="bg-red-50 p-4 rounded-lg">
+                    <h5 className="font-semibold text-red-700 mb-2">아쉬운 점</h5>
+                    <p className="text-gray-700">{project.retrospective.bad}</p>
+                  </div>
+                )}
+                {project.retrospective.improve && (
+                  <div className="bg-yellow-50 p-4 rounded-lg">
+                    <h5 className="font-semibold text-yellow-700 mb-2">개선할 점</h5>
+                    <p className="text-gray-700">{project.retrospective.improve}</p>
+                  </div>
+                )}
+                {project.retrospective.bugfix && (
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h5 className="font-semibold text-blue-700 mb-2">오류 해결</h5>
+                    <p className="text-gray-700">{project.retrospective.bugfix}</p>
+                  </div>
+                )}
+                {project.retrospective.lesson && (
+                  <div className="md:col-span-2 bg-indigo-50 p-4 rounded-lg">
+                    <h5 className="font-semibold text-indigo-700 mb-2">느낀 점</h5>
+                    {renderLesson()}
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* 푸터 영역 */}
@@ -641,3 +624,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

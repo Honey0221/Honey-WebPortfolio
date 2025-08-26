@@ -1,4 +1,4 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import { DiJava } from "react-icons/di";
 import {
   SiJavascript,
@@ -6,7 +6,6 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiJquery,
-  SiOracle,
   SiMysql,
   SiSpringboot,
   SiGit,
@@ -14,12 +13,13 @@ import {
   SiReact,
   SiAmazonaws,
   SiVite,
-  SiIntellijidea,
-  SiEclipseide,
-  SiFlutter,
-  SiAndroidstudio,
-  SiVisualstudiocode,
-  SiDart,
+  SiPostgresql,
+  SiMongodb,
+  SiPython,
+  SiRedis,
+  SiRedux,
+  SiDocker,
+  SiDjango,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
 
@@ -30,33 +30,36 @@ type Skill = {
 
 const frontendSkills: Skill[] = [
   { name: "HTML", icon: <SiHtml5 size={40} /> },
-  { name: "CSS (Tailwind)", icon: <SiTailwindcss size={40} /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={40} /> },
   { name: "JavaScript", icon: <SiJavascript size={40} /> }, 
   { name: "TypeScript", icon: <SiTypescript size={40} /> },
   { name: "jQuery", icon: <SiJquery size={40} /> },
   { name: "Ajax", icon: <SiJquery size={40} /> }, 
   { name: "React", icon: <SiReact size={40} /> },
-  { name: "Flutter", icon: <SiFlutter size={40} /> },
+  { name: "Redux", icon: <SiRedux size={40} /> },
 ];
 
 const backendSkills: Skill[] = [
   { name: "Java", icon: <DiJava size={40} /> },
   { name: "Spring Boot", icon: <SiSpringboot size={40} /> },
-  { name: "Oracle", icon: <SiOracle size={40} /> },
-  { name: "MySQL", icon: <SiMysql size={40} /> },
+  { name: "Python", icon: <SiPython size={40} /> },
+  { name: "Django", icon: <SiDjango size={40} /> },
+  { name: "FastAPI", icon: <FaTools size={40} /> },
   { name: "MyBatis", icon: <FaTools size={40} /> },
-  { name: "Dart", icon: <SiDart size={40} /> },
+  { name: "MySQL", icon: <SiMysql size={40} /> },
+  { name: "PostgreSQL", icon: <SiPostgresql size={40} /> },
+  { name: "MongoDB", icon: <SiMongodb size={40} /> },
+  { name: "Redis", icon: <SiRedis size={40} /> },
 ];
 
 const tools: Skill[] = [
   { name: "Git", icon: <SiGit size={40} /> },
   { name: "GitHub", icon: <SiGithub size={40} /> },
   { name: "AWS", icon: <SiAmazonaws size={40} /> },
+  { name: "Docker", icon: <SiDocker size={40} /> },
   { name: "Vite", icon: <SiVite size={40} /> },
-  { name: "IntelliJ", icon: <SiIntellijidea size={40} /> },
-  { name: "VSCode", icon: <SiVisualstudiocode size={40} /> },
-  { name: "Eclipse", icon: <SiEclipseide size={40} /> },
-  { name: "Android Studio", icon: <SiAndroidstudio size={40} /> },
+  { name: "ChatGPT", icon: <FaTools size={40} /> },
+  { name: "Claude", icon: <FaTools size={40} /> },
 ];
 
 const Skills = () => {
