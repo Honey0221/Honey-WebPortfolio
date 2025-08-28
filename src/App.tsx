@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Skills from "./components/Skills";
@@ -8,9 +8,7 @@ import Introduction from "./components/Introduction";
 import Career from "./components/Career";
 
 function App() {
-  // 모바일 환경에서 브라우저 높이 관련 이슈 처리
   useEffect(() => {
-    // 실제 뷰포트 높이에 맞게 --vh 커스텀 속성 설정
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -24,7 +22,6 @@ function App() {
     };
   }, []);
 
-  // 애니메이션 및 글로벌 스타일 추가
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.setAttribute('data-app-styles', 'true');
@@ -60,7 +57,6 @@ function App() {
     `;
     document.head.appendChild(styleElement);
 
-    // 관찰자를 통한 섹션 애니메이션 처리
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -73,9 +69,18 @@ function App() {
     }, { threshold: 0.1 });
 
     const sections = document.querySelectorAll('.section-content');
-    sections.forEach(section => {
+    sections.forEach((section, index) => {
       section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
       observer.observe(section);
+      
+      if (index === 0 || index === 1) {
+        setTimeout(() => {
+          section.classList.add('opacity-100');
+          section.classList.remove('opacity-0');
+          section.classList.add('translate-y-0');
+          section.classList.remove('translate-y-10');
+        }, index * 200 + 300);
+      }
     });
 
     return () => {

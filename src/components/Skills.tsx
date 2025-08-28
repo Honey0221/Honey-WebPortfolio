@@ -9,10 +9,8 @@ import {
   SiMysql,
   SiSpringboot,
   SiGit,
-  SiGithub,
   SiReact,
   SiAmazonaws,
-  SiVite,
   SiPostgresql,
   SiMongodb,
   SiPython,
@@ -20,6 +18,7 @@ import {
   SiRedux,
   SiDocker,
   SiDjango,
+  SiCss3,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
 
@@ -30,6 +29,7 @@ type Skill = {
 
 const frontendSkills: Skill[] = [
   { name: "HTML", icon: <SiHtml5 size={40} /> },
+  { name: "CSS", icon: <SiCss3 size={40} /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss size={40} /> },
   { name: "JavaScript", icon: <SiJavascript size={40} /> }, 
   { name: "TypeScript", icon: <SiTypescript size={40} /> },
@@ -54,12 +54,8 @@ const backendSkills: Skill[] = [
 
 const tools: Skill[] = [
   { name: "Git", icon: <SiGit size={40} /> },
-  { name: "GitHub", icon: <SiGithub size={40} /> },
   { name: "AWS", icon: <SiAmazonaws size={40} /> },
   { name: "Docker", icon: <SiDocker size={40} /> },
-  { name: "Vite", icon: <SiVite size={40} /> },
-  { name: "ChatGPT", icon: <FaTools size={40} /> },
-  { name: "Claude", icon: <FaTools size={40} /> },
 ];
 
 const Skills = () => {
@@ -67,7 +63,7 @@ const Skills = () => {
     <div className="relative py-16 sm:py-20 md:py-24 z-10 w-full px-4">
       <div className="max-w-[1280px] mx-auto relative z-10">
         <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">SKILL & TOOLS</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">SKILLS</h2>
           <div className="h-1 sm:h-1.5 w-32 sm:w-44 md:w-56 mx-auto bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 mt-2 sm:mt-3 rounded-full"></div>
           <p className="text-gray-300 mt-4 sm:mt-6 md:mt-8 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed px-2">개발에 사용하는 기술 스택과 도구들을 소개합니다</p>
         </div>

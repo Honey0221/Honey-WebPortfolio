@@ -59,19 +59,19 @@ const FloatingIcons = () => {
           href="https://github.com/Honey0221"
           target="_blank"
           rel="noopener noreferrer"
-          onMouseEnter={() => setHoverTooltip("GitHub 방문")}
+          onMouseEnter={() => setHoverTooltip("GitHub")}
           onMouseLeave={() => setHoverTooltip(null)}
           className="bg-gradient-to-r from-indigo-500 to-purple-600 p-2.5 sm:p-3.5 rounded-full shadow-lg hover:shadow-lg hover:shadow-indigo-500/30 transition duration-300 transform hover:scale-110"
-          aria-label="GitHub 방문"
+          aria-label="GitHub"
         >
           <AiFillGithub size={22} className="text-white sm:hidden" />
           <AiFillGithub size={26} className="text-white hidden sm:block" />
         </a>
 
-        {hoverTooltip === "GitHub 방문" && (
+        {hoverTooltip == "GitHub" && (
           <div className="absolute right-full mr-2 top-1/2 transform -translate-y-1/2 flex items-center z-30">
             <div className="bg-gray-700 bg-opacity-90 text-white text-xs sm:text-sm py-1 px-2 rounded whitespace-nowrap">
-              GitHub 방문
+              GitHub
             </div>
             <div className="w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-gray-700 ml-[-1px]" />
           </div>

@@ -285,7 +285,7 @@ const projectList: Project[] = [
       bugfix: "분석할 때마다 DB에 없는 데이터를 크롤링하기 위해 드라이버를 새로 실행해야 하는 문제를 해결하기 위해 크롤러 객체를 최초 한 번만 생성하고 재사용함으로써 작업 속도 향상",
       lesson: "PM 역할을 맡으면서 개발 일정 조율과 팀원 간 원활한 소통이 프로젝트 성공의 핵심임을 체감했습니다. 다음 프로젝트에서는 팀원들의 피드백을 적극적으로 수용하고, 제 의견도 명확하게 전달하여 협업을 통해 보다 완성도 높은 결과물을 만드는 것을 목표",
     },
-    link: "https://www.canva.com/design/DAGwgroLycs/EgL9Fbr8mZBcZIRPj7MVDg/view",
+    link: "https://www.canva.com/design/DAGwgroLycs/oVf3gUsk1oODACcwhT6XqA/view",
     github: "https://github.com/honey0221/Copsproject_Fastapi",
     techIcons: [
       <SiPython key="python" size={20} className="text-green-600" />,
